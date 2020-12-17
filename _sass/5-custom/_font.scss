@@ -1,13 +1,9 @@
-@font-face {
-    font-family: 'D2Coding';
-    src:
-        url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+*{
+    font-family: "Nanum Gothic Coding", 'Nanum Gothic', sans-serif, monospace !important;
 }
 
 body {
-    font-family: 'D2Coding', "Nanum Gothic Coding", monospace;
+    // font-family: "Nanum Gothic Coding", 'Nanum Gothic', sans-serif, monospace;
     font-size: 18px;
     color: #515151;
     line-height: 1.75rem;
@@ -19,6 +15,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'D2Coding', monospace;
+    // font-family: "Nanum Gothic Coding", 'Nanum Gothic', sans-serif, monospace;
     color: #333;
 }

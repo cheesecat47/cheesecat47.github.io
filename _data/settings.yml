@@ -2,7 +2,7 @@
 # General Site Settings
 title: La foret rouge
 # logo: logo.svg # You can add own logo.
-description: Zolan is modern minimal theme for Jekyll
+description: Hello!
 
 
 #-------------------------------
@@ -10,8 +10,6 @@ description: Zolan is modern minimal theme for Jekyll
 author:
   name: Steven Shin
   image: assets/img/01.jpg
-  say-hello: Hello, I’m <strong>Alex Rodriguez</strong>
-  bio: Designs, talks, and writes about <strong>web</strong>, <strong>ethics</strong>, <strong>privacy</strong>, and dev. I share design tutorials, free resources and inspiration. Loves <a href="#">music</a> & riding his bicycle.
   email: cheesecat47@gmail.com
 
 
@@ -25,7 +23,7 @@ envelope: mailto:cheesecat47@gmail.com
 
 #-------------------------------
 # Comment Section (Disqus)
-# disqus-identifier: mr-brown # add your shortname for Disqus Comment. For example mr-brown
+disqus-identifier: cheesecat47 # add your shortname for Disqus Comment. For example mr-brown
 
 
 #-------------------------------
