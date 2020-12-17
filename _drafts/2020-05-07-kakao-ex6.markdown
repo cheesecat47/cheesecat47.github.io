@@ -1,0 +1,147 @@
+---
+layout: post
+title: "[Algorithm] File name sort"
+date: 2020-05-07 19:00:00 +0900
+categories: Programming
+tags: [Algorithm, Programmers, Kakao]
+# image: thumbnails/2020-01-18-Algorithm-baekjoon7562.png
+---
+
+# [from Programmers](https://programmers.co.kr/learn/courses/30/lessons/17686?language=python3){:target="blank"}
+
+## Conditions
+
+- HEAD는 숫자가 아닌 문자로 이루어짐. 최소 한 글자 이상. 영문자로 시작.
+- NUMBER는 1~5글자 사이의 연속된 숫자, 앞에 0이 올 수 있다.
+- TAIL은 나머지 부분. 숫자가 다시 나타날 수도 있고, 아무 글자도 없을 수 있다.
+- HEAD는 대소문자 구분을 하지 않는다.
+- HEAD 부분이 대소문자 차이 외에 같을 경우, NUMBER 정렬. 숫자 앞 0은 무시.
+- HEAD와 NUMBER가 모두 같을 경우 입력에 주어진 순서 유지.
+- 중복된 파일명은 없으나, 대소문자나 숫자 앞 0의 차이가 있을 수는 있다.
+
+## Brute force
+
+{% highlight python %}
+def solution(files):
+    answer = []
+    
+    head_dic = splitHead(files)
+    sorted_head = sorted(head_dic.keys())
+    
+    for head in sorted_head:
+        this_head = head_dic[head]
+        
+        if len(this_head) == 1:
+            answer += this_head
+        else:
+            num_dic = splitNum(this_head)
+            sorted_num = sorted(num_dic.keys())
+            
+            for item in sorted_num:
+                answer += num_dic[item]
+    
+    return answer
+
+
+def splitHead(files):
+    dic = {}
+    
+    for fname in files:
+        head = ""
+        for c in fname:
+            if c.isdigit():
+                break
+            else:
+                head += c
+        head = head.upper()
+        
+        if head not in dic:
+            dic[head] = []
+        dic[head].append(fname)            
+    
+    return dic
+
+
+def splitNum(files):
+    dic = {}
+    
+    for fname in files:
+        num = ""
+        for c in fname:
+            if c.isdigit():
+                num += c
+        num = int(num)
+        
+        if num not in dic:
+            dic[num] = []
+        dic[num].append(fname)            
+    
+    return dic
+{% endhighlight %}
+
+- 에러 발생. 왜?
+- splitNum에서 숫자 확인하는 부분.
+F15d15처럼 숫자가 다시 나오면 에러 발생.
+
+{% highlight python %}
+def splitNum(files):
+    dic = {}
+    
+    for fname in files:
+        num = ""
+        for c in fname:
+            if c.isdigit() is False and len(num) > 0:    #1
+                break
+            if c.isdigit():
+                num += c
+                if(len(num) == 5): break    #2
+        num = int(num)
+        
+        if num not in dic:
+            dic[num] = []
+        dic[num].append(fname)            
+    
+    return dic
+{% endhighlight %}
+
+- 숫자가 다시 나오는 경우를 막기 위해 조건문 2개 사용.
+- #1은 숫자가 아닌 문자열이 나왔는데 'num' 문자열의 길이가 0이 아닌 경우. 숫자가 나온 뒤에 다시 문자가 나왔다면 NUMBER는 다 찾은 것.
+- #2는 NUMBER가 최대 5글자라고 조건이 주어졌으므로 5개 다 찾으면 더 이상 for문 돌 필요 없음.
+
+## Big-O notation
+
+- `splitHead()`에서 `files` 배열에 있는 모든 `fname`을 확인해야되고, 그 중 `head` 길이만큼 내부 for문을 진행하므로 `files`의 길이를 `f`, `head`의 길이를 `h`라 하면 $$ O(f*h) $$ 이다.
+- `head_dic`이 $$ O(f*h) $$ 이고, `head_dic`의 길이를 `hd`라 하면 `sorted_head`를 구하는데 $$ O(hd*log\ hd) $$ 만큼 걸린다.
+- `sorted_head`의 길이는 `head_dic`의 길이와 같으므로 for문은 `hd` 만큼 반복한다. 
+- `splitNum()`에서는 `this_head` 배열에 있는 모든 `fname`을 확인해야되고, 그 다음 `num`을 확인해야 되는데, 조건에 따르면 전체 fname은 최대 100글자이고 HEAD는 한 글자 이상이지만 NUMBER는 1~5글자로 정해져있고, TAIL은 없을 수 있다. 그렇다면 최악의 경우 99자의 HEAD와 1자의 NUMBER인 경우도 있을 수 있으므로 여기선 NUMBER의 길이보다 HEAD의 길이를 판단하는게 더 적절할 것이다. 그래서 여기도 `splitHead()`와 비슷하게 `this_head`의 길이를 `th`로 하면 $$ O(th*h) $$ 만큼 소요될 것이다.
+- `sorted_num`은 `sorted_head`처럼 `num_dic`의 길이를 `nd`라 하면 `sorted_num`를 구하는데 $$ O(nd*log\ nd) $$ 만큼 걸린다.
+- 다음 for문에서는 `sorted_num`의 길이인 `nd`만큼 반복해서 $$ O(nd) $$ 이다.
+
+- `else`문의 수행 시간은 $$ O(th*h) + O(nd*log\ nd) + O(nd) $$ ...  
+최적화가 필요하다.
+
+
+## Optimization
+
+```python
+def splitHead(files):
+    dic = {}
+    
+    for fname in files:
+        head = ""
+        for c in fname:
+            if c.isdigit():
+                break
+            head += c
+        head = head.upper()
+        
+        if head not in dic:
+            dic[head] = []
+        dic[head].append(fname)            
+    
+    return dic
+```
+
+## Review
+
+## Remember

@@ -1,0 +1,90 @@
+---
+layout: post
+title: "[Algorithm] LZW Compress"
+date: 2020-05-07 11:00:00 +0900
+categories: Programming
+tags: [Algorithm, Programmers, Kakao]
+# image: thumbnails/2020-01-18-Algorithm-baekjoon7562.png
+---
+
+# [from Programmers](https://programmers.co.kr/learn/courses/30/lessons/17684?language=python3){:target="blank"}
+
+
+## LZW Compress
+
+1. 길이가 1인 모든 단어를 포함하도록 사전을 초기화한다.
+1. 사전에서 현재 입력과 일치하는 가장 긴 문자열 'w'를 찾는다.
+1. 'w'에 해당하는 사전의 색인 번호를 출력하고, 입력에서 'w'를 제거한다.
+1. 입력에서 처리되지 않은 다음 글자가 남아있다면('c'), 'w'+'c'에 해당하는 단어를 사전에 등록한다.
+1. 단계 2로 돌아간다.
+
+## Conditions
+
+- 영문 대문자만 처리한다.
+- 색인 번호는 정수값으로 1부터 시작한다.
+- 'msg'는 1글자 이상 1000글자 이하 영문 대문자로만 이뤄진 문자열이다.
+
+## Brute force
+
+- 영문 대문자로 사전을 초기화한다.
+- 'w'를 찾기 위해 'msg'의 제일 앞 한 글자부터 'dic'에 있는지 확인한다.
+- 'w'가 'dic'에 있으면 'w'를 확장할 수 있는지 확인한다. 확장할 수 있으면 'w'에 다음 글자를 붙인다.
+- 확장할 수 없으면 그 'w'가 마지막 단어이므로 반환한다.
+- 만약 확장했는데 사전에 없다면, 직전 단어는 사전에 있는 단어이므로 그 단어를 반환한다.
+- 'w'를 찾았다면 그 색인번호를 'answer' 배열에 추가한다.
+- msg의 제일 앞에서 'w'를 제거한다.
+- 만약 'msg'가 아직 남아있으면 'w'에 'msg'의 제일 앞 단어를 더해서 사전에 추가한다. ('msg'의 제일 앞 단어는 방금 제거한 'w' 바로 다음 글자이므로)
+- 'msg'가 없다면 압축이 완료된 것이다.
+
+{% highlight python %}
+def solution(msg):
+    answer = []
+    dic = initDict()
+    
+    while msg:
+        w = findLongest(msg, dic)
+        answer.append(dic[w])
+        msg = msg[len(w):]
+        if msg:
+            dic[w+msg[0]] = len(dic) + 1
+        else:
+            break
+    
+    return answer
+
+
+def initDict():
+    temp = {}
+    alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for i in range(len(alpha)):
+        temp[alpha[i]] = i + 1
+    return temp
+
+
+def findLongest(msg, dic):
+    i = 0
+    w = msg[i]
+    while w:
+        if w in dic:
+            i += 1
+            if i >= len(msg):
+                break
+            else:
+                w += msg[i]
+        else:
+            w = w[:-1]
+            break
+    return w
+{% endhighlight %}
+
+## Big-O notation
+
+- initDict() 에서 'alpha'의 길이만큼 반복하므로 O(a) 시간 필요하다.
+- findLongest() 에서 'w'가 'dic' 안에 있는지 확인하는 일은 딕셔너리이므로 O(1)에 끝난다.
+
+
+## Optimization
+
+## Review
+
+## Remember

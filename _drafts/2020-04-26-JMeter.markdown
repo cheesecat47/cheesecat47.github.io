@@ -1,0 +1,41 @@
+---
+layout: post
+title: "How to use APACHE JMeter"
+date: 2020-04-26 21:00:00 +0900
+categories: Programming
+tags: [Web, Backend, Server, APACHE, JMeter, Test]
+# image: thumbnails/2020-01-18-Algorithm-baekjoon7562.png
+---
+
+<!-- APACHE JMeter는 부하 테스트와 퍼포먼스 측정을 위한 오픈소스 프로그램입니다. -->
+APACHE JMeter is an open source programme designed to load test functional behaviour and measure performance.
+
+<!-- 다운로드는 <https://jmeter.apache.org/download_jmeter.cgi> 여기에서 가능하고, 맥 유저는 -->
+You can download on <https://jmeter.apache.org/download_jmeter.cgi> here, and
+
+```zsh
+$ brew install jmeter
+```
+
+<!-- 이렇게도 가능합니다. -->
+this could be possible if you are using Mac.
+
+<!-- JMeter 유저 매뉴얼에서는 GUI 모드는 Test Plan을 작성하고 디버깅할 때만 사용하고, 실제 부하 테스트 시에는 CLI를 사용하는 것을 권장합니다. -->
+JMeter User Manual suggests that GUI mode should only be used for creating the test plan or debugging, CLI mode (NON GUI) must be used for load testing.
+
+A test plan describes a seriese of steps JMeter will execute when run. A complete test plan will consist of one or more Thread Groups, logic controllers, sample generating controllers, listeners, timers, assertions, and configuration elements.
+
+JMeter reports warnings and errors to the jmeter.log file, as well as some information on the test run itself.
+
+## Element of a Test Plan
+
+### Thread Group
+
+Thread group elements are the beginning points of any test plan. All controllers and samplers must be under a thread group.
+As the name implies, the thread group element controlls the number of threads JMeter will use to execute your test.
+
+The ramp-up period tells JMeter how long to take to "ramp-up" to the full number of threads chosen. Each thread will start (ramp-up period / number of threads) seconds after the previous thread was begun.
+
+[DATADOG](https://www.datadoghq.com/dg/monitor/tomcat/?utm_source=Advertisement&utm_medium=GoogleAdsNon1stTier&utm_campaign=GoogleAdsNon1stTier-TomcatNonENES&utm_content=Infra&utm_keyword=tomcat%20performance&utm_matchtype=p&gclid=EAIaIQobChMInYS53faM6QIVg3ZgCh1aTwJyEAAYASAAEgKWg_D_BwE)
+
+[JMeter AJP Test](https://www.blazemeter.com/blog/how-to-load-test-tomcat-servers)
