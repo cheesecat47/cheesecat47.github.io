@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Infrared City, 151126"
+date:   2015-11-26 00:00:00 +0900
+categories: Photography
+image: thumbnails/2019-1-4-infrared-city-151126_1.jpg
+---
+
+![Infrared City]({{"assets/img/photography/2019-1-4-infrared-city-151126_1.jpg" | relative_url}}){:class="imgframe"}
+
+Nov 26, 2015. Daegu, Korea.
+
+Submitted in the exhibition.
+- 45th Daegu Gyeongbuk University Photography Club Union Exhibition
+  - Jan 26~31, 2016. Daegu Arts Center.

@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "4x5 Format Wooden Pinhole Camera #2"
+date:   2019-03-22 00:00:00 +0900
+categories: Photography
+image: thumbnails/2019-3-22-4x5pinhole2_2.JPG
+---
+
+![4x5pinhole]({{"assets/img/photography/2019-3-22-4x5pinhole2_1.jpg" | relative_url}}){:class="imgframe"}
+Cut the plywood like the drawings designed before using CNC machine.  
+
+![4x5pinhole]({{"assets/img/photography/2019-3-22-4x5pinhole2_2.JPG" | relative_url}}){:class="imgframe"}
+Sanded the surface and finished with oil.  
+
+![4x5pinhole]({{"assets/img/photography/2019-3-22-4x5pinhole2_3.JPG" | relative_url}}){:class="imgframe"}
+Temporary assembled, but not glued.  
+
+<br>
+#### Things to do:
+- Make 0.4mm diameter pinhole plate.
+- Add some dark fabric like velvet to inside the box to prevent the reflection of light.
+- And also need a dark cloth to cover the film holder area.
+
+
+<br>
+p.s. Thanks to JongMin Lee and also congratulate his birthday!

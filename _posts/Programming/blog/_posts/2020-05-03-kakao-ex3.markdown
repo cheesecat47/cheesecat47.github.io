@@ -1,0 +1,92 @@
+---
+layout: post
+title: "[Algorithm] News Clustering"
+date: 2020-05-03 12:00:00 +0900
+categories: Programming
+tags: [Algorithm, Programmers, Kakao]
+# image: thumbnails/2020-01-18-Algorithm-baekjoon7562.png
+---
+
+# [from Programmers](https://programmers.co.kr/learn/courses/30/lessons/17677?language=python3#){:target="blank"}
+
+## Conditions
+
+<!-- - 자카드 유사도 J(A, B)는 두 집합의 교집합 크기를 합집합 크기로 나눈 값으로 정의.
+- 원소의 중복을 허용하는 다중집합에 대해 확장을 하면, 다중집합의 교집합은 min(A의 해당 원소 개수, B의 해당 원소 개수)를 가지고, 합집합은 max()를 가진다.
+- 각 문자열의 길이는 2 이상 1,000 이하이다.
+- 입력으로 들어온 문자열을 두 글자씩 끊어서 다중집합의 원소로 만든다.
+- 영문자로 된 글자쌍만 유효하고, 공백이나 숫자, 특수 문자가 들어있는 경우 그 글자 쌍을 버린다.
+- 대소문자 차이는 무시한다.
+- 유사도 값은 0에서 1사이 실수이므로 65536을 곱하고 정수부만 출력한다. -->
+
+- Jaccard similarity J(A, B) defines the intersection size of the two sets divided by the union size.
+- In multiple set that allows duplication of elements, the intersection has min(# of elements in A, # of elements in B). And the union has max(...).
+- Each string length is 2...1,000.
+- Cut the input string into two letters and make it as a set.
+- Only alphabet character pairs are valid and discard the pair if it contains spaces, numbers or special characters.
+- Differences in upper case and lower case should be ignored.
+- Since the similarity value is in 0...1 range real number, 65536 should be multiplied and print as integer value.
+
+## Strategy
+
+<!-- - 파이썬 set 타입은 교집합과 합집합 연산을 제공하지만, 중복이 없는 집합이라 이 방법은 사용 불가.
+- 중복이 허용되는 집합이기 때문에 각 원소의 개수를 세는 작업이 필요.
+- 조건에 나와있는 min, max를 활용한다.
+- 우선 s1의 원소가 s2에 있는 경우는 교집합을 만들 수 있으므로 계산하고, s2에서 그 원소를 제거한다.
+- s1의 원소가 s2에 없는 경우는 s1에만 있는 경우로 따로 모아둔다.
+- 반복문을 다 돌고 나면 s2에는 s1에 없는 원소만 남아있을 것이고, s1_not_s2에는 s2에 없는 원소만 남아있을 것이다. 이 두 집합에 있는 원소 개수를 모두 합집합에 더한다.
+- 만약 합집합이 0인 경우는 자카드 유사도를 계산할 때 0으로 나눌 수 없으므로 조건에 주어진 대로 1을 곱해서 출력한다.
+- 그렇지 않은 경우, 자카드 유사도를 계산하고 65536을 곱해서 출력한다. -->
+
+- Python 'set' type provides intersection and union methods, but these are not available because there is no overlap.
+- Counting the number of each element is required because it is a set that allows overlap.
+- Use min() and max() listed in the conditions.
+- If the element of s1 is in s2, it can be in the intersection set. Calculate it and remove the element from s2.
+- If the element of s1 is not in s2, collect it seperately.
+- After the for statement, s2 has elements which are not in s1.
+- Add the number of elements in the s1_not_s2 and s2 to union.
+- If the union is zero, it cannot be divided into zero when calculating the Jaccard similarity, so it should be printed by multiplying 1 as given in the condition.
+- Otherwise, calculate the similarity and multiply it by 65536, and print only integer part.
+
+{% highlight python %}
+def split2char(str):
+    temp = {}
+    for word in [str[i:i+2] for i in range(len(str)-1)]:
+        if word.isalpha():
+            uppered = word.upper()
+            temp[uppered] = temp.get(uppered, 0) + 1
+    return temp
+
+
+def solution(str1, str2):
+    s1 = split2char(str1);
+    s2 = split2char(str2);
+    
+    inter = 0
+    union = 0
+    
+    s1_not_s2 = {}
+    for k1, v1 in s1.items():
+        if k1 in s2:
+            inter += min(v1, s2[k1])
+            union += max(v1, s2[k1])
+            del s2[k1]
+        else:
+            s1_not_s2[k1] = v1
+    
+    union += sum(list(s1_not_s2.values()))
+    union += sum(list(s2.values()))
+    
+    if union == 0:
+        return 65536
+    else:
+        return int(65536 / union * inter)
+{% endhighlight %}
+
+## Remember
+
+<!-- - s1_not_s2를 따로 만들지 않고 v1을 바로 union에 더해도 될 것 같다.
+- 중복 허용하는 집합에서 교집합, 합집합을 구하는 방법을 기억해둬야 할 것 같다. -->
+
+- I think v1 can add directly to the union without making s1_not_s2.
+- I need to remember how to find intersecion and union in this solution.

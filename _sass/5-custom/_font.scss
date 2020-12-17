@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'D2Coding';
+    src:
+        url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'D2Coding', "Nanum Gothic Coding", monospace;
+    font-size: 18px;
+    color: #515151;
+    line-height: 1.75rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'D2Coding', monospace;
+    color: #333;
+}

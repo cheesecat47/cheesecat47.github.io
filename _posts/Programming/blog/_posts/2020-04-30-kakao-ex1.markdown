@@ -1,0 +1,88 @@
+---
+layout: post
+title: "[Algorithm] Crane doll picker game"
+date: 2020-04-30 14:00:00 +0900
+categories: Programming
+tags: [Algorithm, Programmers, Kakao]
+# image: thumbnails/2020-01-18-Algorithm-baekjoon7562.png
+---
+
+# [from Programmers](https://programmers.co.kr/learn/courses/30/lessons/64061?language=python3){:target="blank"}
+
+## Conditions
+
+<!-- - board는 5x5보다 크고 30x30보다 작은 NxN 배열로 주어짐.
+- 0은 빈 칸, 1~100의 각 숫자는 각기 다른 인형의 모양 의미. 같은 숫자는 같은 인형.
+- moves 배열의 크기는 1 이상 1000 이하.
+- moves 각 원소의 값은 1 이상 board 배열 가로 크기 이하인 자연수.
+- 바구니는 모든 인형이 들어갈 수 있을 만큼 충분히 크다고 가정.
+- 같은 모양의 인형 두 개가 바구니에 연속해서 쌓이게 되면 두 인형은 터지면서 바구니에서 사라짐.
+- 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않음. -->
+
+- 'board' is given in an NxN matrix larger than 5x5 and smaller than 30x30.
+- Zero means a blank space, each number from 1 to 100 means a different doll's shape. The same number means the same doll.
+- The size of the 'moves' array is from 1 to 1000.
+- The values of each element of 'moves' are from 1 to less than N.
+- Assume the basket is big enough for all the dolls to fit in.
+- When two dolls of the same shape pile up in a row in the basket, the two dolls burst and disappear from the basket.
+- Nothing will happen if the crane is operated in the absence of a doll.
+
+## Strategy
+
+<!-- - board 배열을 사용해 top 배열 생성 -> 매 번 배열을 다 확인할 필요 없도록.
+- moves 배열이 1부터 주어지므로 배열 접근을 위해 1씩 뺀 bin_num을 사용.
+- 0행이 제일 위고 N-1행이 바닥이므로 인형을 뺄 때 top[bin_num]에 1씩 더함.
+- 만약 top[bin_num]이 N과 같다면 그 bin에는 인형이 더이상 없음 -> 아무 일도 일어나지 않는다.
+- 인형이 있을 때 만약 바구니가 비어있거나, 현재 인형과 바구니의 마지막 인형이 다른 모양이라면 현재 인형을 바구니에 넣는다.
+- 만약 바구니의 마지막 인형이 현재 인형과 같다면, 두 인형은 사라지고 2개가 사라졌다고 answer에 더한다. -->
+
+- Use 'board' array to create 'top' array -> No need to check bins every time.
+- Since the 'moves' array is given from 1, use bin_num-1 for access to the array.
+- If top[bin_num] equals N, then there is no more doll in that bin. So nothing happens.
+- If the basket is empty or if current doll and the last doll in the basket are in different shapes, put the current doll in the basket.
+- If the basket's last doll is the same as the current doll, the two dolls are removed and add 2 to answer.
+
+{% highlight python %}
+def solution(board, moves):
+    answer = 0
+
+    top = []
+    for i in range(len(board)):
+        for j in range(len(board)):
+            if board[j][i] != 0:
+                top.append(j)
+                break
+    
+    basket = []
+    for i in moves:
+        bin_num = i-1
+        
+        if top[bin_num] == len(board):
+            # if no dolls in the bin, do nothing
+            continue
+        
+        doll = board[top[bin_num]][bin_num]
+        
+        # put the doll if the basket is empty
+        if basket != [] and basket[-1] == doll:
+            basket.pop() # remove
+            board[top[bin_num]][bin_num] = 0
+            top[bin_num] += 1
+            answer += 2
+        else:
+            basket.append(doll)
+            board[top[bin_num]][bin_num] = 0
+            top[bin_num] += 1
+    
+    return answer
+{% endhighlight %}
+
+## Remember
+
+<!-- - 스택을 활용한 간단한 문제이다.
+- top 배열을 한 번만 만들어 두면 매 번 해당 bin의 가장 상단 인형을 찾을 필요가 없다.
+- moves가 1부터이므로 인덱스 주의해야 한다. -->
+
+- This is a simple problem using stack.
+- If you made 'top' array once, no need to find the top doll of the bin every timme.
+- Be careful of the index since the 'moves' start at 1.

@@ -1,0 +1,46 @@
+---
+layout: post
+title: "Moonrise, 2020"
+date: 2020-02-15 18:00:00 +0900
+categories: Photography
+tags: [Moonrise, AnselAdams]
+image: thumbnails/2020-01-14-Moonrise2020_1.jpg
+---
+
+![Moonrise]({{"assets/img/photography/2020-01-14-Moonrise2020_1.jpg" | relative_url}}){:class="imgframe"}
+Pay homage to Ansel Adams.  
+Jan 9, 2020. Daegu, Korea.  
+
+I saw Ansel Adams' [Moonrise, Hernandez, New Mexico](http://anseladams.com/ansel-adams-anecdotes/) a few years ago and I was impressed.  
+Inspired by his work, I wanted to capture the moonrise of the 21st century by taking a picture of the city, the buildings, and the moon, instead of a large field.  
+
+.  
+.  
+.  
+.  
+.  
+
+---
+
+![Moonrise]({{"assets/img/photography/2020-01-14-Moonrise2020_2.jpg" | relative_url}}){:class="imgframe"}
+Dec 01, 2017. Gumi, Korea.  
+
+This photo was taken from the top of the mountain.  
+But this is not my favourite. Moon is too high. I should have climbed a bit early. Also, there are no buildings and lights on the ground.  
+
+---
+
+![Moonrise]({{"assets/img/photography/2020-01-14-Moonrise2020_3.jpeg" | relative_url}}){:class="imgframe"}
+Jul 28, 2018. Daegu, Korea.  
+
+There are buildings and lights in this photo, but the moon is slightly hidden because of the clouds.  
+
+---
+
+![Moonrise]({{"assets/img/photography/2020-01-14-Moonrise2020_4.jpeg" | relative_url}}){:class="imgframe"}
+![Moonrise]({{"assets/img/photography/2020-01-14-Moonrise2020_5.jpeg" | relative_url}}){:class="imgframe"}
+![Moonrise]({{"assets/img/photography/2020-01-14-Moonrise2020_6.jpeg" | relative_url}}){:class="imgframe"}
+Feb 05 ~ 09, 2020. 9block 2garden, Daegu, Korea.
+
+And finally, after years of challenge, I was able to take my favourite picture. There are the moon and many buildings, but no clouds.  
+I participated in the photo club exhibition this year with this photo.  

@@ -2,25 +2,82 @@
 layout: page
 title: About
 permalink: /about/
-image: 01.jpg
+image: profile2.jpeg
 ---
 
-Hi, my name is Alex Rodriguez. I like being at the center of events, being free and enjoying every moment. Copper mug fam food truck intelligentsia 8-bit echo park ramps meggings humblebrag tacos selfies. Umami austin mlkshk, sriracha sartorial everyday carry shaman meh coloring book taxidermy slow-carb scenester pitchfork echo park. Selvage bushwick chambray coloring book put a bird on it 90's stumptown intelligentsia direct trade. Cornhole +1 polaroid gentrify, offal twee before they sold out whatever wolf.
+Hello, my name is Steven Shin.  
+I'm Korean student majoring Computer Science & Engineering in Kyungpook National University, Daegu, Republic of Korea.
 
-***
+I have interests in programming, photography.  
+You can visit my repositories in Github: [cheesecat47][github]{:target="blank"}  
+And my photos: [foretrouge7][instagram]{:target="blank"}  
 
-#### Austin scenester...
-<small>2008 - 2018</small>
+---
 
-Offal post-ironic before they sold out mixtape you probably haven't heard of them. Pinterest roof party umami everyday carry street art. Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Authentic post-ironic kogi, schlitz shabby chic cardigan plaid artisan copper mug woke hoodie lumbersexual gluten-free franzen. Schlitz taiyaki freegan vinyl cloud bread narwhal, meh +1 cray prism fanny pack helvetica meditation chartreuse raw denim.
+### **Projects**  
 
-#### Vinyl hexagon before...
-<small>2001 - 2008</small>
+- [WAS Session Clustering](https://github.com/cheesecat47/CDP2_WAS_clustering){:target="blank} 
+    - APACHE httpd, Tomcat, Docker.  
+    - Mar. 2020 - Jun. 2020.  
+<br>
+- PnF Equipments Rent Web  
+  - Django, Docker, RPi.  
+  - Dec. 2019 - Present.  
+<br>    
+- [SSLab] Manage and develop web-based analysis platform for malware network traffic captures.
+  - Django, Elasticstack, Kafka, Docker.
+  - May. 2019 - Dec. 2019.  
+<br>  
+- [4x5 format pinhole camera](https://cheesecat47.github.io/photography/4x5pinhole1.html){:target="blank"}.  
+  - Arduino.
+  - Mar. 2019 - Aug. 2019.   
 
-Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Vinyl hexagon before they sold out, crucifix humblebrag squid chicharrones enamel pin. Iceland humblebrag farm-to-table, lyft pug tilde irony.
-Hot chicken shoreditch tousled listicle, actually meggings vape. Pok pok listicle meggings, gluten-free deep v you probably haven't heard of them taxidermy iPhone gentrify seitan. Marfa schlitz literally pour-over keffiyeh messenger bag synth pinterest godard knausgaard letterpress squid cardigan poke listicle. 
+---
 
-#### La croix you probably...
-<small>1995 - 2000</small>
+### **Career**
 
-Shoreditch activated charcoal iceland hexagon. Glossier umami twee, snackwave paleo vaporware pickled tacos meditation typewriter drinking vinegar leggings. Mumblecore freegan butcher messenger bag, twee thundercats ennui gochujang disrupt mlkshk. Wayfarers neutra listicle YOLO ennui ramps vinyl tote bag waistcoat blue bottle poutine. Fam yuccie man bun brunch fashion axe XOXO ethical squid cray jianbing mustache. Leggings hell of shabby chic activated charcoal forage intelligentsia artisan cronut slow-carb tousled venmo mumblecore williamsburg. Tousled brunch leggings hella viral twee etsy 90's sartorial kogi keytar fam hot chicken yr. Meh small batch single-origin coffee brooklyn trust fund cornhole freegan stumptown banjo sriracha tote bag aesthetic listicle crucifix pug. Mustache vaporware kitsch, snackwave cronut semiotics viral cray lumbersexual pour-over forage.
+- Undergraduated Intern in [Software Systems Lab][SSLAB]{:target="blank"}  
+Kyungpook National University.  
+  - May. 2019 - Present.  
+
+---
+
+### **Awards**  
+
+- [SEISMIC STRUCTURAL DESIGN CONTEST 2019](http://contest.koced.or.kr/)  
+  - Head of SEISMIC RESEARCH AND TEST CENTRE prize.  
+  - Jul. 2019.  
+
+---
+
+### **Education**  
+
+- B.S., [Computer Science & Engineering][KNUCSE]{:target="blank"}  
+  - Kyungpook National University.  
+  - May. 2014 - Present.  
+
+---
+
+#### **Exhibitions**  
+
+- [Kyungpook National University Museum 60th Anniversary Photo Exhibition](../photography/Wolpawon.html)  
+    - KNU Museum.  
+    - Nov. 11, 2019 ~ Feb. 25, 2020.  
+<br>  
+- [Kyungpook National University Photography Club 50th anniversary Exhibition](../photography/Moonrise2020.html)  
+  - Daegu Arts Centre.  
+  - Jan. 2019.  
+<br>  
+- Daegu Gyeongbuk University Photography Club Exhibition.
+  - 49th, Feb. 2020. 9block 2garden, Daegu.  
+  - 48th, Jan. 2019. Daegu Arts Centre.  
+  - 45th, Jan. 2016. Daegu Arts Centre.  
+  - 44th, Feb. 2015. Daegu Arts Centre.  
+
+
+[myblog]: https://cheesecat47.github.io/
+[myblogsrc]: https://github.com/cheesecat47/cheesecat47.github.io
+[github]: https://github.com/cheesecat47
+[instagram]: https://www.instagram.com/foretrouge7/
+[knucse]: http://computer.knu.ac.kr/main/
+[sslab]: http://sslab.knu.ac.kr/

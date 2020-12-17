@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "4x5 Format Wooden Pinhole Camera #1"
+date:   2019-03-11 00:00:00 +0900
+categories: Photography
+image: thumbnails/2019-3-11-4x5pinhole1_2.JPG
+---
+
+![4x5pinhole]({{"assets/img/photography/2019-3-11-4x5pinhole1_1.JPG" | relative_url}}){:class="imgframe"}
+
+![4x5pinhole]({{"assets/img/photography/2019-3-11-4x5pinhole1_2.JPG" | relative_url}}){:class="imgframe"}
+
+![4x5pinhole]({{"assets/img/photography/2019-3-11-4x5pinhole1_3.JPG" | relative_url}}){:class="imgframe"}
+
+This is the first design of 4x5 format pinhole camera.  
+5mm wooden plates were used to construct the body.  
+A thin plate with a pinhole at the centre will be added at the front.  
+A film holder will be put into the slot right in front of the back plate.  
+
+
+<br>
+#### Details
+- Focal length 90mm  
+- Pinhole diameter 0.4mm  
+- F stop 225
+
+- Image Diameter 173mm  
+- Film Dimension 163mm  
+(approx. 6.4")
+
+- Angle of View 84.4 degrees  
+(35mm film equiv. 24mm)  
+
+<br>
+p.s. Thanks to JongMin Lee.
+
+<br>
+reference  
+[mrpinhole.com](http://www.mrpinhole.com/calcpinh.php)

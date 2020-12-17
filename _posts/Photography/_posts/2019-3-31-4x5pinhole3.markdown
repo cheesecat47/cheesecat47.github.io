@@ -1,0 +1,23 @@
+---
+layout: post
+title: "4x5 Format Wooden Pinhole Camera #3"
+date: 2019-03-31 00:00:00 +0900
+categories: Photography
+image: thumbnails/2019-3-31-4x5pinhole3_3.jpg
+---
+
+This is the last.
+
+![4x5pinhole]({{"assets/img/photography/2019-3-31-4x5pinhole3_1.JPG" | relative_url}}){:class="imgframe"}
+![4x5pinhole]({{"assets/img/photography/2019-3-31-4x5pinhole3_2.JPG" | relative_url}}){:class="imgframe"}
+I cut and spreaded an aluminium can.  
+Drill 0.4mm pinhole in the plate.
+
+And finally, this is the first photograph.
+![4x5pinhole]({{"assets/img/photography/2019-3-31-4x5pinhole3_3.jpg" | relative_url}}){:class="imgframe"}
+Left and right is reversed in this photo.  
+It was about 6 p.m. The yellow sunlight came from right(left in real).  
+It took 40 minutes on the photographic paper, not a film.
+
+<br>
+p.s. Thanks to SangMin Lee!

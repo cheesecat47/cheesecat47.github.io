@@ -1,4 +1,4 @@
-baseurl: "/zolan" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 
@@ -33,3 +33,8 @@ tag_permalink_style:  pretty
 sass:
   sass_dir: _sass
   style: compressed
+
+
+# Custom Configuration Options
+## global conf
+timezone: Asia/Seoul

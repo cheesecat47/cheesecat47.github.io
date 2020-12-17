@@ -1,0 +1,19 @@
+---
+layout: post
+title: "KNU Museum Wolpawon photography contest"
+date: 2019-11-11 00:00:00 +0900
+categories: Photography
+image: thumbnails/2019-11-11-Wolpawon.jpg
+---
+
+![Wolpawon]({{"assets/img/photography/2019-11-11-Wolpawon.jpg" | relative_url}}){:class="imgframe"}
+
+Apr 23, 2019. Daegu, Korea.
+
+[Bronze award][winner_list] in the contest.
+
+- [Kyungpook National University Museum 60th anniversary photo exhibition][exhibition_link].
+  - Nov 11, 2019 ~ Feb 25, 2020. KNU Museum.
+
+[winner_list]: https://museum.knu.ac.kr/bbs/board.php?bo_table=notice&wr_id=319
+[exhibition_link]: https://museum.knu.ac.kr/bbs/board.php?bo_table=notice&wr_id=322

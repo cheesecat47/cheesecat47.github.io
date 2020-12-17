@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Infrared City, 181101"
+date:   2018-11-01 00:00:00 +0900
+categories: Photography
+image: thumbnails/2019-1-4-infrared-city-181101_1.jpg
+---
+
+![Infrared City]({{"assets/img/photography/2019-1-4-infrared-city-181101_1.jpg" | relative_url}}){:class="imgframe"}
+
+Nov 1, 2018. Daegu, Korea.
+
+Submitted in the exhibition.
+- Kyungpook National University Photography Club 50th anniversary Exhibition
+- 48th Daegu Gyeongbuk University Photography Club Union Exhibition
+  - Jan 7~13, 2019. Daegu Arts Center.
