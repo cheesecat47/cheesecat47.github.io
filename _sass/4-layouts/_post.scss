@@ -47,17 +47,17 @@
      position: relative;
      padding-left: 15px;
      font-weight: 700;
-     &:before {
-       content: "";
-       position: absolute;
-       top: 50%;
-       left: 0;
-       transform: translateY(-50%);
-       width: 5px;
-       height: 5px;
-       border-radius: 50%;
-       background: $dark;
-     }
+    //  &:before {
+    //    content: "";
+    //    position: absolute;
+    //    top: 50%;
+    //    left: 0;
+    //    transform: translateY(-50%);
+    //    width: 5px;
+    //    height: 5px;
+    //    border-radius: 50%;
+    //    background: $dark;
+    //  }
    } 
   }
 }
@@ -77,10 +77,10 @@
 }
 
 .post {
-  margin: 80px auto;
+  margin: 40px auto;
 
   &.post-no-image {
-    margin: 0 auto 80px; 
+    margin: 0 auto 40px; 
   }
 
   @media only screen and (max-width: $mobile) {
@@ -129,6 +129,7 @@
 .post__navigation {
   display: flex;
   align-items: baseline;
+  margin: 0 auto;
   margin-bottom: 80px;
   padding-bottom: 80px;
   border-bottom: 1px solid $light-gray;
@@ -141,8 +142,10 @@
     }
 
     .post__nav__image {
-      max-height: 20vh;
+      max-width: 40vw;
+      height: auto;
       display: block;
+      margin: 0 auto;
       margin-bottom: 40px;
       background-position: center;
       background-size: cover;
@@ -227,6 +230,7 @@
 }
 
 .comments {
+  margin: 0 auto;
   margin-bottom: 80px;
 
   @media only screen and (max-width: $mobile) {

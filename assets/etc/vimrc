@@ -1,0 +1,101 @@
+" runtime! debian.vim
+" READ ME
+" This file is setting for myself. 
+" 1. Install vim
+" 2. Install Vundle
+" 3. Copy this file to ~/.vimrc
+" 4. run vim
+" 5. type ':PluginInstall'
+" 6. Complete
+"
+"
+" Vundle(plug-in management tool)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' " Vundle : Plug-in management tool
+Plugin 'The-NERD-Tree' " NerdTree : File-tree
+Plugin 'vim-airline/vim-airline' " Airline : Add info-line-bar
+Plugin 'dikiaap/minimalist' " material theme and colorscheme
+Plugin 'airblade/vim-gitgutter' " vim-gitgutter : show the changes of managed file by git on the vim-airline
+Plugin 'tpope/vim-fugitive' " use git in the vim
+" Plugin 'tomlion/vim-solidity' " use Solidity syntax highlight and indentation
+Plugin 'pangloss/vim-javascript' " use Javascript syntax highlighting and indentaion
+Plugin 'Raimondi/delimitMate' " auto match () , {} and []
+Plugin 'Syntastic' " Syntax check
+call vundle#end()
+
+
+" Plug-in configuration(detail)
+
+	" for The-NERD-Tree
+	autocmd BufEnter * lcd %:p:h
+	autocmd VimEnter * if !argc() | NERDTree | endif
+	nmap <leader>nt :NERDTreeToggle<cr>
+	let NERDTreeShowLineNumbers=1
+
+	" for vim-airline
+	let g:airline#extensions#tabline#enabled=1
+	let g:airline#extensions#tabline#fnamemod=':t'
+	set laststatus=2
+	" for multi-buffer UI using vim-airline
+	set hidden
+	nmap <leader>t :enew!<CR>
+	nmap <leader>l :bnext<CR>
+	nmap <leader>h :bprevious<CR>
+	nmap <leader>w :bp! <BAR> bd #<CR>
+	nmap <leader>bl :ls<CR>
+
+	" for delimitMate
+	let delimitMate_expand_cr=1
+	" for material_theme
+	let g:airline_theme='minimalist'
+	let g:airline_powerline_fonts=1
+	set t_Co=256
+	colorscheme minimalist
+	" Syntastic
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*	 
+	let g:syntastic_always_populate_loc_list=1
+	let g:syntastic_auto_loc_list=1
+	let g:syntastic_check_on_open=1
+	let g:syntastic_check_on_wq=0
+
+" Setting for individual style
+set showcmd		" Show (partial) command in status line.
+set showmatch		" Show matching brackets.
+set autowrite		" Automatically save before commands like :next and :make
+set mouse=a		" Enable mouse usage (all modes)
+set nu
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set cindent
+set ruler
+set wmnu
+set hlsearch
+set history=500
+syntax on
+
+au BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "norm g`\"" |
+\ endif
+
+"key mapping
+	"code folding
+	nmap <S-f> [{jV]}kzf
+	nmap <S-o> zo
+	"move cursor to other window
+	nmap <C-h> <C-w>h
+	nmap <C-j> <C-w>j
+	nmap <C-k> <C-w>k
+	nmap <C-l> <C-w>l
+filetype plugin indent on
+
+" Source a global configuration file if available
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
+

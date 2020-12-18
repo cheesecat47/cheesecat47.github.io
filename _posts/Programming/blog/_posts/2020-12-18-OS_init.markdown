@@ -1,0 +1,276 @@
+---
+layout: post
+title: "Mac, Ubuntu initial settings"
+date: 2020-12-18 16:00:00 +0900
+categories: Programming
+tags: [Mac, Ubuntu, Setting]
+# image: thumbnails/
+---
+
+> When developing, I personally use Mac, Ubuntu and Raspberry Pi a lot.  
+> In particular, when creating a new Ubuntu vm or RPi, I have to do the initial setup from scratch.  
+> So I write this article to remember my settings.  
+<!-- > 개발을 할 때 개인적으로 맥과 우분투, 라즈베리 파이를 많이 사용합니다.  
+> 특히, 새 우분투 vm을 만들거나 라즈베리 파이를 사용할 때 초기 세팅을 처음부터 해야됩니다.  
+> 그래서 제가 사용하는 프로그램과 환경을 정리해봤습니다. -->
+
+---
+
+## [Homebrew](https://brew.sh/) [Mac]  
+
+```bash
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+---
+
+## [Git, Git-lfs](https://git-scm.com/downloads)
+
+```bash
+# Mac
+$ brew install git git-lfs
+
+# Ubuntu, RPi
+$ sudo apt install git git-lfs
+
+# Configure git
+$ git config --global user.name "Your Name"
+$ git config --global user.email "you@your-domain.com"
+```
+
+---
+
+## [D2Coding](https://github.com/naver/d2codingfont/releases) [Font] 
+
+- On Mac or Ubuntu GUI mode, unzip and doublick the ttc file in D2CodingAll directory. You can install the font easily.  
+- If you are using Ubuntu CLI or RPi, try this.  
+
+```bash
+$ sudo cp your-font-file /usr/share/fonts/
+$ sudo fc-cache -fv
+$ sudo fc-list | grep "D2Coding"
+```
+
+---
+
+## [wget](https://iterm2.com/downloads.html)
+
+```bash
+# Mac
+$ brew install wget
+
+# Ubuntu, RPi
+$ sudo apt install wget
+```
+
+---
+
+## [vim](https://www.vim.org/download.php)
+
+```bash
+# In mac, vim is already installed.
+
+# Ubuntu, RPi
+$ sudo apt install -y vim
+
+$ wget https://raw.githubusercontent.com/cheesecat47/cheesecat47.github.io/cheesecat47-patch-1/assets/etc/vimrc
+$ mv vimrc ~/.vimrc
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ vim +PluginInstall +qall
+```
+
+---
+
+## [iTerm2](https://iterm2.com/downloads.html) [Mac]
+
+```zsh
+$ brew cask install iterm2
+```
+
+---
+
+## [zsh & Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)  
+
+- zsh is default shell on recent mac. Others need installation.  
+
+```bash
+# Mac. For update zsh.
+$ brew install zsh
+
+# Ubuntu, RPi
+$ sudo apt install zsh
+$ sudo chsh -s `which zsh`
+```
+
+- Oh My Zsh  
+
+```zsh
+# oh-my-zsh
+$ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#install zsh plug-ins
+$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+$ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+$ vi ~/.zshrc
+```
+
+- Add plugins.
+
+```
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-completions
+)
+```
+
+- Apply the changes.
+
+```bash
+$ source ~/.zshrc
+```
+
+---
+
+## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+
+```zsh
+$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+$ vi ~/.zshrc
+```
+
+- Change theme.
+
+```zsh
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+- Apply the changes.
+
+```zsh
+$ source ~/.zshrc
+```
+
+---
+
+## tmux
+
+```zsh
+# Mac
+$ brew install tmux
+
+# Ubuntu, RPi
+$ sudo apt install tmux
+```
+
+- Apply tmux theme.
+
+```zsh
+$ cd ~/
+$ git clone https://github.com/gpakosz/.tmux.git
+$ ln -s -f .tmux/.tmux.conf
+$ cp .tmux/.tmux.conf.local .
+```
+
+- Set tmux to allow mouse. Modify `.tmux/.tmux.conf.local`
+
+```zsh
+$ vi ~/.tmux/.tmux.conf.local
+
+> set -g mouse on
+```
+
+---
+
+## Docker & Docker Compose
+
+- On Mac, install [Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/).
+- On Ubuntu and RPi, you have to install each. 
+    - Install [Docker](https://docs.docker.com/engine/install/ubuntu/) on Ubuntu.
+
+    ```bash
+    $ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+    $ sudo apt-get update
+    $ sudo apt-get install \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common
+
+    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    $ sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+
+    $ sudo apt-get update
+    $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+    ```
+
+    - Install [Docker](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script) on RPi.
+
+    ```bash
+    $ curl -fsSL https://get.docker.com -o get-docker.sh
+    $ sudo sh get-docker.sh
+    ```
+
+    - Install [Docker Compose](https://docs.docker.com/compose/install/)
+
+    ```bash
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    ```
+
+---
+
+## [bat](https://github.com/sharkdp/bat#installation)
+
+```bash
+# Mac
+$ brew install bat
+
+# Ubuntu
+$ sudo apt install bat
+
+# Can't use on RPi
+
+$ vi ~/.zshrc # or bashrc
+> alias cat="bat" # "batcat" on Ubuntu
+$ source ~/.zshrc
+```
+
+---
+
+## [VSCode](https://code.visualstudio.com/download)
+
+```bash
+# Mac
+$ brew install visual-studio-code
+
+# Ubuntu
+sudo snap install code --classic
+```
+
+---
+
+## [openinterminal](https://github.com/Ji4n1ng/OpenInTerminal) [Mac]
+
+```zsh
+$ brew cask install openinterminal-lite
+```
+
+---
+
+## References
+
+- <https://subicura.com/2017/11/22/mac-os-development-environment-setup.html>  
+- <https://m.blog.naver.com/PostView.nhn?blogId=chandong83&logNo=220886603829&proxyReferer=https:%2F%2Fwww.google.com%2F>
+- <https://jamix.tistory.com/41>
+- <https://toshi15shkim.github.io/articles/2019-07/linux-docker-install>

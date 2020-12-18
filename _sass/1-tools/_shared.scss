@@ -9,6 +9,7 @@ hr,
 table,
 fieldset, figure,
 pre {
+  margin-top: $base-spacing-unit;
   margin-bottom: $base-spacing-unit;
 }
 
