@@ -28,7 +28,7 @@ include:
 # Tags
 tag_page_dir:         tag
 tag_page_layout:      tag_page
-tag_permalink_style:  pretty
+# tag_permalink_style:  pretty
 
 sass:
   sass_dir: _sass
@@ -38,3 +38,8 @@ sass:
 # Custom Configuration Options
 ## global conf
 timezone: Asia/Seoul
+
+## build conf
+port: 7200
+watch: true
+livereload: true
