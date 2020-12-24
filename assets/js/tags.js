@@ -11,12 +11,10 @@ function updateQueryString(tagName) {
 }
 
 function filterByTagName(tagName) {
-    // $('.invisible').removeClass('invisible');
-    $('.d-none').removeClass('d-none');
+    $('.hidden').removeClass('hidden');
     $('.post-wrapper').each((index, elem) => {
         if (!elem.hasAttribute(`data-${tagName}`)) {
-            // $(elem).addClass('invisible');
-            $(elem).addClass('d-none');
+            $(elem).addClass('hidden');
         }
     });
     $(`.tag`).removeClass('selected');

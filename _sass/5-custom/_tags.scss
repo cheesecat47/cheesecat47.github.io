@@ -1,0 +1,25 @@
+.hidden {
+    display: none;
+}
+
+.tag {
+    color: #fff;
+    background-color: #555;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+}
+
+.tag:hover {
+    color: #fff;
+    background-color: #aaa;
+}
+
+.tagrow {
+    padding: 0px 60px 50px;
+}
+
+.selected {
+    color: #333;
+    background-color: #ddd;
+}

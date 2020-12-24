@@ -5,15 +5,14 @@ permalink: /tags/
 ---
 
 <div class="container">
-    <div class="row">
+    <div class="row tagrow">
         <!-- https://wormwlrm.github.io/2019/09/22/How-to-add-tags-on-Jekyll.html -->
-        {% for tag in site.data.tags %}
-            <span class="tag" data-tag="{{tag}}">
-                {{ tag }}
+        {% for tag in site.tags %}
+            <span class="tag" data-tag="{{tag[0]}}">
+                {{ tag[0] }}
             </span>
         {% endfor %}
 	</div>
-
     <div class="row">
         {% for post in site.posts %}
           <div class="post-wrapper"
