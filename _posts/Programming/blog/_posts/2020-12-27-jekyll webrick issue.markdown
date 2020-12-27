@@ -9,7 +9,7 @@ image: programming/201227_jekyll/2020-12-27-jekyll_webrick_issue_2.png
 
 Ruby version is updated to 3.0.0. And when I runned `bundler exec jekyll serve` command to run jekyll server, I got this error message.
 
-```
+```plaintext
 /usr/local/lib/ruby/gems/3.0.0/gems/jekyll-4.2.0/lib/jekyll/commands/serve/servlet.rb:3:in `require': cannot load such file -- webrick (LoadError)
         ...
         from /Users/username/.gem/ruby/3.0.0/bin/bundler:23:in `<main>'
