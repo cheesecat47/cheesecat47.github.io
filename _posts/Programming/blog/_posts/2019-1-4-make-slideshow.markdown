@@ -3,13 +3,15 @@ layout: post
 title:  "[Jekyll] Making slideshow"
 date:   2019-1-4 23:36:00 +0900
 categories: Programming
+tags: [jekyll, CSS, Javascript]
 ---
 
 I added slideshow in index.html using JavaScript.
-Thanks to [W3School](https://www.w3schools.com/howto/howto_js_slideshow.asp).
+Thanks to [W3School](https://www.w3schools.com/howto/howto_js_slideshow.asp){:target="blank"}.
 
 First, add HTML code.
-{% highlight html %}
+
+```html
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
@@ -54,11 +56,11 @@ First, add HTML code.
 </div> -->
 
 <!-- This code makes a timing error too. -->
-{% endhighlight %}
+```
 
+Second, add CSS.
 
-<br>Second, add CSS.
-{% highlight CSS %}
+```css
 * {box-sizing:border-box}
 
 /* Slideshow container */
@@ -153,10 +155,11 @@ First, add HTML code.
   from {opacity: .4}
   to {opacity: 1}
 }
-{% endhighlight %}
+```
 
-<br>Third, add JavaScript code to display an automatic slideshow.
-{% highlight JavaScript %}
+Third, add JavaScript code to display an automatic slideshow.
+
+```javascript
 var slideIndex = 0;
 showSlides();
 
@@ -172,6 +175,6 @@ function showSlides() {
   setTimeout(showSlides, 3579); // original code changes image every 2 seconds,
                                 // but I made it more slowly.
 }
-{% endhighlight %}
+```
 
 And, the result is in the main page.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Ways to school"
+title: "[PS] Ways to school"
 date: 2020-12-28 20:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, DP]
@@ -11,14 +11,21 @@ image: programming/201228_school/2020-12-28-programmers-school.jpg
 
 ## Conditions
 
-![triangle]({{"assets/img/programming/201228_school/2020-12-28-programmers-school.jpg" | relative_url}})
+![triangle]({{"assets/img/programming/201228_school/2020-12-28-programmers-school.jpg" | relative_url}}){:class="imgframe"}  
 
-- 집에서 학교까지 가는 길은 m x n 크기의 격자 모양으로 나타낼 수 있음.  
+<!-- - 집에서 학교까지 가는 길은 m x n 크기의 격자 모양으로 나타낼 수 있음.  
 - m, n은 1 이상 100 이하인 자연수. m, n이 모두 1인 경우는 입력으로 주어지지 않음.  
 - 집의 좌표는 (1, 1), 학교의 좌표는 (m, n).  
 - 물에 잠긴 지역인 puddles의 좌표는 0개 이상 10개 이하.  
 - 집과 학교가 물에 잠긴 경우는 입력으로 주어지지 않음.  
-- 오른쪽과 아래쪽으로만 움직여 집에서 학교까지 갈 수 있는 최단경로의 개수를 1,000,000,007로 나눈 나머지를 반환.  
+- 오른쪽과 아래쪽으로만 움직여 집에서 학교까지 갈 수 있는 최단경로의 개수를 1,000,000,007로 나눈 나머지를 반환.   -->
+
+- The road from home to school can be represented by a `m x n` grid.  
+- `m` and `n` are natural numbers that are 1...100. The case that both `m` and `n` are 1 is not given as input.  
+- The coordinates of the house are (1, 1), the coordinates of the school are (m, n).  
+- The number of coordinates of puddles, which are submerged areas, are 0...10.  
+- The case that the house or school is submerged is not given as an input.  
+- You can only move right and down. Count the number of shortest paths from home to school and return its remainder divided by 1,000,000,007.  
 
 ## Design
   
@@ -58,6 +65,6 @@ $$
 
 ## Implementation
 
-![code]({{"assets/img/programming/201228_school/2020-12-28-programmers-school-code.png" | relative_url}})
+![code]({{"assets/img/programming/201228_school/2020-12-28-programmers-school-code.png" | relative_url}}){:class="imgframe"}  
 
 ## Remember

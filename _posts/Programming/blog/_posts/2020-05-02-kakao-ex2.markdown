@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Tuples"
+title: "[PS] Tuples"
 date: 2020-05-02 17:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, Kakao]
@@ -35,10 +35,10 @@ tags: [Algorithm, Programmers, Kakao]
 - To take hint from I/O Example 3, "\{\{20,111\},\{111\}\}" should be [111, 20]. Find \{111\} first, add it to the result tuple, and then check \{20,111\}. At this time, 111 is already in the result tuple, so you only need to add 20.
 - Conversion process is required because results must be output in integer array.
 
-{% highlight python %}
+```python
 def solution(s):
     answer = []
-    
+
     s1 = s.lstrip('{').rstrip('}').split('},{')
     s2 = sorted(s1, key=lambda x:len(x))
     
@@ -49,7 +49,7 @@ def solution(s):
                 answer.append(ch)
     
     return [int(i) for i in answer]
-{% endhighlight %}
+```
 
 ## Remember
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Crossing the stepping-stone"
+title: "[PS] Crossing the stepping-stone"
 date: 2020-05-08 15:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, Kakao]
@@ -10,7 +10,6 @@ tags: [Algorithm, Programmers, Kakao]
 # [from Programmers](https://programmers.co.kr/learn/courses/30/lessons/64062?language=python3){:target="blank"}
 
 ## Conditions
-
 
 ## Brute force
 
@@ -72,14 +71,12 @@ def solution(stones, k):
 ``` -->
 
 - 이 문제는 정확성과 효율성을 모두 테스트한다.
-- 정확성 테스트는 최대 테스트 17 〉	통과 (98.34ms, 10.9MB)로 통과했지만, 효율성 테스트는 모두 실패했다.
+- 정확성 테스트는 최대 테스트 17 〉 통과 (98.34ms, 10.9MB)로 통과했지만, 효율성 테스트는 모두 실패했다.
 
 ## Big-O notation
 
 - 그 이유를 알아보자.
-
 - stones는 최대 200,000이고, 배열 각 원소의 값은 최대 200,000,000이므로 알고리즘을 변경할 필요가 있다.
-
 
 ## Optimization
 
@@ -118,6 +115,6 @@ def solution(stones, k):
 - 그런데, 결과적으로는 실행시간에 큰 차이가 없었다.
 - 결국 이 코드도 stones 배열을 여러 번 반복해야 되는건 같아서 그런 것 같다.
 
-- 최대: 테스트 17 〉	통과 (91.99ms, 10.9MB)
+- 최대: 테스트 17 〉 통과 (91.99ms, 10.9MB)
 
 ## Remember

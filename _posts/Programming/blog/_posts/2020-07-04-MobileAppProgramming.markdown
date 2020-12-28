@@ -7,11 +7,14 @@ tags: [KNU, CSE, iOS, Swift]
 image: thumbnails/2020-07-04-MobileAppProgramming.png
 ---
 
-# Menu? Menu!
-> 2020 1st semester, Mobile App Programming2 project of team #9, [KNU][knu] [CSE][knucse].  
+# Menu? Menu!  
+
+> 2020 1st semester, Mobile App Programming2 project of team #9, [KNU][knu]{:target="blank"} [CSE][knucse]{:target="blank"}.  
 >
 > Corona 19 makes us spend more time at home, and we have more worries about eating.  
 > We have created an iphone application that allows you to search for recipes using public data and Teachable Machine.
+
+---
 
 ![appicon](https://raw.githubusercontent.com/cheesecat47/MenuMenu/master/docs/appicon.png)
 
@@ -19,7 +22,7 @@ image: thumbnails/2020-07-04-MobileAppProgramming.png
 
 ![tab1](https://raw.githubusercontent.com/cheesecat47/MenuMenu/master/docs/tab1.png)  
 
-![tab1_1](https://raw.githubusercontent.com/cheesecat47/MenuMenu/master/docs/tab1_1.png)    
+![tab1_1](https://raw.githubusercontent.com/cheesecat47/MenuMenu/master/docs/tab1_1.png)  
   
 ![tab2_1](https://raw.githubusercontent.com/cheesecat47/MenuMenu/master/docs/tab2_1.png)  
 
@@ -38,12 +41,12 @@ image: thumbnails/2020-07-04-MobileAppProgramming.png
 
 ## Info
   
-[cheesecat47](https://github.com/cheesecat47) – cheesecat47@gmail.com  
-[jinkyuhan](https://github.com/jinkyuhan) – gkswlsrb95@gmail.com  
-[JIOMS](https://github.com/JIOMS) – kimsj4077@gmail.com  
-[vanipriyanka99](https://github.com/cheesecat47) – gali.priyanka@btech.christuniversity.in  
+[cheesecat47](https://github.com/cheesecat47){:target="blank"} – cheesecat47@gmail.com  
+[jinkyuhan](https://github.com/jinkyuhan){:target="blank"} – gkswlsrb95@gmail.com  
+[JIOMS](https://github.com/JIOMS){:target="blank"} – kimsj4077@gmail.com  
+[vanipriyanka99](https://github.com/cheesecat47){:target="blank"} – gali.priyanka@btech.christuniversity.in  
 
-[https://github.com/cheesecat47/MenuMenu](https://github.com/cheesecat47/MenuMenu)
+[https://github.com/cheesecat47/MenuMenu](https://github.com/cheesecat47/MenuMenu){:target="blank"}
 
 [knu]: http://www.knu.ac.kr/
 [knucse]: http://computer.knu.ac.kr/

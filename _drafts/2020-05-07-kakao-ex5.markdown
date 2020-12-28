@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] LZW Compress"
+title: "[PS] LZW Compress"
 date: 2020-05-07 11:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, Kakao]
@@ -8,7 +8,6 @@ tags: [Algorithm, Programmers, Kakao]
 ---
 
 # [from Programmers](https://programmers.co.kr/learn/courses/30/lessons/17684?language=python3){:target="blank"}
-
 
 ## LZW Compress
 
@@ -36,7 +35,7 @@ tags: [Algorithm, Programmers, Kakao]
 - 만약 'msg'가 아직 남아있으면 'w'에 'msg'의 제일 앞 단어를 더해서 사전에 추가한다. ('msg'의 제일 앞 단어는 방금 제거한 'w' 바로 다음 글자이므로)
 - 'msg'가 없다면 압축이 완료된 것이다.
 
-{% highlight python %}
+```python
 def solution(msg):
     answer = []
     dic = initDict()
@@ -75,13 +74,12 @@ def findLongest(msg, dic):
             w = w[:-1]
             break
     return w
-{% endhighlight %}
+```
 
 ## Big-O notation
 
 - initDict() 에서 'alpha'의 길이만큼 반복하므로 O(a) 시간 필요하다.
 - findLongest() 에서 'w'가 'dic' 안에 있는지 확인하는 일은 딕셔너리이므로 O(1)에 끝난다.
-
 
 ## Optimization
 

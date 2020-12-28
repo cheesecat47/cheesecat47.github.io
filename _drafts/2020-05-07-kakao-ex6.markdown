@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] File name sort"
+title: "[PS] File name sort"
 date: 2020-05-07 19:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, Kakao]
@@ -21,7 +21,7 @@ tags: [Algorithm, Programmers, Kakao]
 
 ## Brute force
 
-{% highlight python %}
+```python
 def solution(files):
     answer = []
     
@@ -77,13 +77,13 @@ def splitNum(files):
         dic[num].append(fname)            
     
     return dic
-{% endhighlight %}
+```
 
 - 에러 발생. 왜?
 - splitNum에서 숫자 확인하는 부분.
 F15d15처럼 숫자가 다시 나오면 에러 발생.
 
-{% highlight python %}
+```python
 def splitNum(files):
     dic = {}
     
@@ -102,7 +102,7 @@ def splitNum(files):
         dic[num].append(fname)            
     
     return dic
-{% endhighlight %}
+```
 
 - 숫자가 다시 나오는 경우를 막기 위해 조건문 2개 사용.
 - #1은 숫자가 아닌 문자열이 나왔는데 'num' 문자열의 길이가 0이 아닌 경우. 숫자가 나온 뒤에 다시 문자가 나왔다면 NUMBER는 다 찾은 것.
@@ -119,7 +119,6 @@ def splitNum(files):
 
 - `else`문의 수행 시간은 $$ O(th*h) + O(nd*log\ nd) + O(nd) $$ ...  
 최적화가 필요하다.
-
 
 ## Optimization
 

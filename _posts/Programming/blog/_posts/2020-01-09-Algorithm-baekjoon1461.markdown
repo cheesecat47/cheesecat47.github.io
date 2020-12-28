@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Baekjoon #1461"
+title: "[PS] Baekjoon #1461"
 date: 2020-01-09 13:00:00 +0900
 categories: Programming
 tags: [Algorithm, Baekjoon, Greedy]
@@ -9,13 +9,13 @@ image: thumbnails/2020-01-09-Algorithm-baekjoon1461.png
 
 # [Library](https://www.acmicpc.net/problem/1461){:target="blank"}
 
-### Conditions:
+## Conditions:
 
 - Current position is 0, books are also at 0.
 - You can carry M books at a time and move a total of N books.
 - There's no need to return to 0 for the last move.
 
-### Strategy:
+## Strategy:
 
 - Split positive and negative ways.
 - Since there's a requirement to return to zero,
@@ -38,7 +38,7 @@ def g(li, m):
     o = len(li) % m
 
     if o == 0:
-		# Can divide by M
+        # Can divide by M
         return sum(li[m - 1::m]) * 2
     else:
         return sum(li[o - 1::m]) * 2
@@ -46,6 +46,6 @@ def g(li, m):
 
 ```python
     # Last move does not need to return to zero.
-	# Substract more far distance to make the result smaller.
+    # Substract more far distance to make the result smaller.
     print(g(po, m) + g(ne, m) - max(abs(b[0]), abs(b[-1])))
 ```

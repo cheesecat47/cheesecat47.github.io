@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Baekjoon #7562"
+title: "[PS] Baekjoon #7562"
 date: 2020-01-18 11:00:00 +0900
 categories: Programming
 tags: [Algorithm, Baekjoon, Graph]
@@ -8,23 +8,22 @@ tags: [Algorithm, Baekjoon, Graph]
 
 # [Knight](https://www.acmicpc.net/problem/7562){:target="blank"}
 
-### Conditions:
+## Conditions:  
 
 - 3 input values:  
-    - board length l  
-    - source (x,y)  
-    - destination (x, y)  
+  - board length l  
+  - source (x,y)  
+  - destination (x, y)  
 - Count how many moves needs to go to the destination.
 
-### Strategy:
+## Strategy:
 
 - Visit all board using bfs.  
 - In each turn, the knight can visit 8 directions.  
 - Knight can move only on the board, not the outside.  
-    -> Need to check the coordinate.
+  -> Need to check the coordinate.
 
-
-{% highlight python %}
+```python
 import sys
 r = sys.stdin.readline
 
@@ -77,18 +76,20 @@ if __name__ == "__main__":
         bfs(src, dst, l, visited, count)
 
         print(count[dst[0]][dst[1]])
-{% endhighlight %}
+```
 
-### Remember:
+## Remember:
+
 I wrote like below, at first.
-{% highlight python %}
+
+```python
 if each_x not in range(l) or each_y not in range(l):
-{% endhighlight %}
+```
 
 But this made more overheads, because 2 range() method made a sequence, iterable object, every turn and 'in' keyword took O(n) time to find.
 
-{% highlight python %}
+```python
 if 0 <= each_x < l and 0 <= each_y < l and visited[each_x][each_y] == 0:
-{% endhighlight %}
+```
 
 This change has 4 comparison, but it's more faster than find in range(l) for twice.

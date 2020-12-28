@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Integer Triangle"
+title: "[PS] Integer Triangle"
 date: 2020-12-28 13:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, DP]
@@ -11,7 +11,7 @@ image: programming/201228_intTree/2020-12-28-programmers-integer-triangle.jpg
 
 ## Conditions
 
-![triangle]({{"assets/img/programming/201228_intTree/2020-12-28-programmers-integer-triangle.jpg" | relative_url}})
+![triangle]({{"assets/img/programming/201228_intTree/2020-12-28-programmers-integer-triangle.jpg" | relative_url}}){:class="imgframe"}  
 
 <!-- - 위와 같은 삼각형의 꼭대기에서 바닥까지 이어지는 경로 중, 거쳐간 숫자의 합이 가장 큰 경우를 찾음.  
 - 아래 칸으로 이동할 때는 대각선으로 한 칸 오른쪽 또는 왼쪽으로만 이동 가능.  
@@ -53,6 +53,6 @@ $$
 
 ## Implementation
 
-![code]({{"assets/img/programming/201228_intTree/2020-12-28-programmers-integer-triangle-code.png" | relative_url}})
+![code]({{"assets/img/programming/201228_intTree/2020-12-28-programmers-integer-triangle-code.png" | relative_url}}){:class="imgframe"}  
 
 ## Remember

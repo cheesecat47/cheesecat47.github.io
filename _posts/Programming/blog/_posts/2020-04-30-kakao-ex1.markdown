@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] Crane doll picker game"
+title: "[PS] Crane doll picker game"
 date: 2020-04-30 14:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, Kakao]
@@ -42,7 +42,7 @@ tags: [Algorithm, Programmers, Kakao]
 - If the basket is empty or if current doll and the last doll in the basket are in different shapes, put the current doll in the basket.
 - If the basket's last doll is the same as the current doll, the two dolls are removed and add 2 to answer.
 
-{% highlight python %}
+```python
 def solution(board, moves):
     answer = 0
 
@@ -75,7 +75,7 @@ def solution(board, moves):
             top[bin_num] += 1
     
     return answer
-{% endhighlight %}
+```
 
 ## Remember
 

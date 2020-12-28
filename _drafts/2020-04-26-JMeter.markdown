@@ -36,6 +36,6 @@ As the name implies, the thread group element controlls the number of threads JM
 
 The ramp-up period tells JMeter how long to take to "ramp-up" to the full number of threads chosen. Each thread will start (ramp-up period / number of threads) seconds after the previous thread was begun.
 
-[DATADOG](https://www.datadoghq.com/dg/monitor/tomcat/?utm_source=Advertisement&utm_medium=GoogleAdsNon1stTier&utm_campaign=GoogleAdsNon1stTier-TomcatNonENES&utm_content=Infra&utm_keyword=tomcat%20performance&utm_matchtype=p&gclid=EAIaIQobChMInYS53faM6QIVg3ZgCh1aTwJyEAAYASAAEgKWg_D_BwE)
+[DATADOG](https://www.datadoghq.com/dg/monitor/tomcat/?utm_source=Advertisement&utm_medium=GoogleAdsNon1stTier&utm_campaign=GoogleAdsNon1stTier-TomcatNonENES&utm_content=Infra&utm_keyword=tomcat%20performance&utm_matchtype=p&gclid=EAIaIQobChMInYS53faM6QIVg3ZgCh1aTwJyEAAYASAAEgKWg_D_BwE){:target="blank"}
 
-[JMeter AJP Test](https://www.blazemeter.com/blog/how-to-load-test-tomcat-servers)
+[JMeter AJP Test](https://www.blazemeter.com/blog/how-to-load-test-tomcat-servers){:target="blank"}

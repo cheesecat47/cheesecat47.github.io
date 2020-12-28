@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Algorithm] News Clustering"
+title: "[PS] News Clustering"
 date: 2020-05-03 12:00:00 +0900
 categories: Programming
 tags: [Algorithm, Programmers, Kakao]
@@ -48,7 +48,7 @@ tags: [Algorithm, Programmers, Kakao]
 - If the union is zero, it cannot be divided into zero when calculating the Jaccard similarity, so it should be printed by multiplying 1 as given in the condition.
 - Otherwise, calculate the similarity and multiply it by 65536, and print only integer part.
 
-{% highlight python %}
+```python
 def split2char(str):
     temp = {}
     for word in [str[i:i+2] for i in range(len(str)-1)]:
@@ -81,7 +81,7 @@ def solution(str1, str2):
         return 65536
     else:
         return int(65536 / union * inter)
-{% endhighlight %}
+```
 
 ## Remember
 
