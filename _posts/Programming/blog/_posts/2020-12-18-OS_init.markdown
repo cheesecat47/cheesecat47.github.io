@@ -16,7 +16,7 @@ tags: [Mac, Ubuntu, Setting]
 
 ---
 
-## [Homebrew](https://brew.sh/){:target="blank"} [Mac]  
+## [Homebrew](https://brew.sh/) [Mac]  
 
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,7 +24,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 
 ---
 
-## [Git, Git-lfs](https://git-scm.com/downloads){:target="blank"}
+## [Git, Git-lfs](https://git-scm.com/downloads)  
 
 ```bash
 # Mac
@@ -40,7 +40,7 @@ $ git config --global user.email "you@your-domain.com"
 
 ---
 
-## [D2Coding](https://github.com/naver/d2codingfont/releases){:target="blank"} [Font]  
+## [D2Coding](https://github.com/naver/d2codingfont/releases) [Font]  
 
 - On Mac or Ubuntu GUI mode, unzip and doublick the ttc file in D2CodingAll directory. You can install the font easily.  
 - If you are using Ubuntu CLI or RPi, try this.  
@@ -53,7 +53,7 @@ $ sudo fc-list | grep "D2Coding"
 
 ---
 
-## [wget](https://iterm2.com/downloads.html){:target="blank"}  
+## [wget](https://iterm2.com/downloads.html)  
 
 ```bash
 # Mac
@@ -65,7 +65,7 @@ $ sudo apt install wget
 
 ---
 
-## [vim](https://www.vim.org/download.php){:target="blank"}  
+## [vim](https://www.vim.org/download.php)  
 
 ```bash
 # In mac, vim is already installed.
@@ -73,7 +73,7 @@ $ sudo apt install wget
 # Ubuntu, RPi
 $ sudo apt install -y vim
 
-$ wget https://raw.githubusercontent.com/cheesecat47/cheesecat47.github.io/cheesecat47-patch-1/assets/etc/vimrc
+$ wget https://raw.githubusercontent.com/cheesecat47/cheesecat47.github.io/master/assets/etc/vimrc
 $ mv vimrc ~/.vimrc
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 $ vim +PluginInstall +qall
@@ -81,15 +81,15 @@ $ vim +PluginInstall +qall
 
 ---
 
-## [iTerm2](https://iterm2.com/downloads.html){:target="blank"} [Mac]
+## [iTerm2](https://iterm2.com/downloads.html) [Mac]
 
 ```zsh
-$ brew cask install iterm2
+$ brew install --cask iterm2
 ```
 
 ---
 
-## [zsh & Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh){:target="blank"}  
+## [zsh & Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)  
 
 - zsh is default shell on recent mac. Others need installation.  
 
@@ -135,7 +135,7 @@ $ source ~/.zshrc
 
 ---
 
-## [Powerlevel10k](https://github.com/romkatv/powerlevel10k){:target="blank"}
+## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
 
 ```zsh
 $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -157,7 +157,7 @@ $ source ~/.zshrc
 
 ---
 
-## tmux
+## tmux  
 
 ```zsh
 # Mac
@@ -188,9 +188,14 @@ $ vi ~/.tmux/.tmux.conf.local
 
 ## Docker & Docker Compose
 
-- On Mac, install [Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/){:target="blank"}.
+- On Mac, install [Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/) or try this.  
+  
+    ```bash
+    $ brew install --cask docker  
+    ```
+  
 - On Ubuntu and RPi, you have to install each.  
-  - Install [Docker](https://docs.docker.com/engine/install/ubuntu/){:target="blank"} on Ubuntu.
+  - Install [Docker](https://docs.docker.com/engine/install/ubuntu/) on Ubuntu.
 
     ```bash
     $ sudo apt-get remove docker docker-engine docker.io containerd runc
@@ -214,14 +219,14 @@ $ vi ~/.tmux/.tmux.conf.local
     $ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
 
-  - Install [Docker](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script){:target="blank"} on RPi.
+  - Install [Docker](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script) on RPi.
 
     ```bash
     $ curl -fsSL https://get.docker.com -o get-docker.sh
     $ sudo sh get-docker.sh
     ```
 
-    - Install [Docker Compose](https://docs.docker.com/compose/install/){:target="blank"}
+    - Install [Docker Compose](https://docs.docker.com/compose/install/)
 
     ```bash
     $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -230,7 +235,7 @@ $ vi ~/.tmux/.tmux.conf.local
 
 ---
 
-## [bat](https://github.com/sharkdp/bat#installation){:target="blank"}
+## [bat](https://github.com/sharkdp/bat#installation)  
 
 ```bash
 # Mac
@@ -248,7 +253,7 @@ $ source ~/.zshrc
 
 ---
 
-## [VSCode](https://code.visualstudio.com/download){:target="blank"}
+## [VSCode](https://code.visualstudio.com/download)  
 
 ```bash
 # Mac
@@ -260,10 +265,25 @@ sudo snap install code --classic
 
 ---
 
-## [openinterminal](https://github.com/Ji4n1ng/OpenInTerminal){:target="blank"} [Mac]
+## [Postman](https://www.postman.com/downloads/)  
+
+```bash
+# Mac
+$ brew install --cask postman
+```
+
+---
+
+## TablePlus  
+
+- <https://tableplus.com/download>  
+
+---
+
+## [openinterminal](https://github.com/Ji4n1ng/OpenInTerminal) [Mac]
 
 ```zsh
-$ brew cask install openinterminal-lite
+$ brew install --cask openinterminal-lite
 ```
 
 ---
