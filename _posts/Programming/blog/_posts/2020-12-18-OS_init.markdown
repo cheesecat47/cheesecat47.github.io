@@ -137,6 +137,12 @@ $ source ~/.zshrc
 
 ## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
 
+- Install [fonts](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) for fancy icons. [Optional]  
+
+![p10k]({{"assets/img/programming/201218_OS/2020-12-18-OS_init_p10k.png" | relative_url}}){:class="imgframe"}  
+
+- Install powerlevel10k.
+
 ```zsh
 $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
@@ -219,6 +225,13 @@ $ vi ~/.tmux/.tmux.conf.local
     $ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
 
+  - Install [Docker Compose](https://docs.docker.com/compose/install/) on Ubuntu.
+
+    ```bash
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.28.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    ```
+
   - Install [Docker](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script) on RPi.
 
     ```bash
@@ -226,11 +239,10 @@ $ vi ~/.tmux/.tmux.conf.local
     $ sudo sh get-docker.sh
     ```
 
-    - Install [Docker Compose](https://docs.docker.com/compose/install/)
+  - Install [Docker Compose](https://docs.docker.com/compose/install/#alternative-install-options) on RPi.
 
     ```bash
-    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    $ sudo chmod +x /usr/local/bin/docker-compose
+    $ sudo pip install docker-compose
     ```
 
 ---
@@ -249,6 +261,16 @@ $ sudo apt install bat
 $ vi ~/.zshrc # or bashrc
 > alias cat="bat" # "batcat" on Ubuntu
 $ source ~/.zshrc
+```
+
+---
+
+## [Portainer](https://documentation.portainer.io/v2.0/deploy/linux/)  
+
+```bash
+# Docker required
+$ docker volume create portainer_data
+$ docker run -d -p 9090:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 ```
 
 ---
