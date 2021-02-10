@@ -6,5 +6,16 @@ defaults:
     values:
       permalink: /:basename:output_ext
 
+## build conf
+port: 7200
+watch: true
+open_url: true
+
+livereload: true
+livereload_min_delay: 3
+livereload_max_delay: 10
+
 future: true
 show_drafts: true
+
+# incremental: true

@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Docker"
+date: 2021-02-10 11:25:00 +0900
+categories: Programming
+tags: [Docker, Container]
+# image: thumbnails/2020-12-26-asciinema.jpg
+---
+
+> 도커는 인프라스트럭처의 애플리케이션 의존성을 제거함으로써 배치와 확장성 문제를 해결한다.
+
+{:.lang-en}
+
+> Docker
+
+
+## References
+
+- MICROSERVICES AND CONTAINERS, Parminder S. Kocher, 2018.
+- <https://asciinema.org/docs/how-it-works>

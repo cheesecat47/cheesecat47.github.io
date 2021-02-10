@@ -38,7 +38,3 @@ sass:
 ## global conf
 timezone: Asia/Seoul
 
-## build conf
-port: 7200
-watch: true
-livereload: true
