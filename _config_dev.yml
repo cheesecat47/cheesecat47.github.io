@@ -7,7 +7,6 @@ defaults:
       permalink: /:basename:output_ext
 
 ## build conf
-port: 7200
 watch: true
 open_url: true
 
