@@ -7,12 +7,15 @@ tags: [Mac, Ubuntu, Setting]
 # image: thumbnails/
 ---
 
+> 개발을 할 때 개인적으로 맥과 우분투, 라즈베리 파이를 많이 사용합니다.  
+> 새 우분투 vm을 만들거나 라즈베리 파이를 사용할 때 매번 처음부터 설정을 해야 합니다.  
+> 그래서 그 작업을 쉽게 하기 위해 제가 사용하는 프로그램과 환경을 정리해봤습니다.  
+
+{:.lang-en}
+
 > When developing, I personally use Mac, Ubuntu and Raspberry Pi a lot.  
 > In particular, when creating a new Ubuntu vm or RPi, I have to do the initial setup from scratch.  
 > So I write this article to remember my settings.  
-<!-- > 개발을 할 때 개인적으로 맥과 우분투, 라즈베리 파이를 많이 사용합니다.  
-> 특히, 새 우분투 vm을 만들거나 라즈베리 파이를 사용할 때 초기 세팅을 처음부터 해야됩니다.  
-> 그래서 제가 사용하는 프로그램과 환경을 정리해봤습니다. -->
 
 ---
 
@@ -41,6 +44,11 @@ $ git config --global user.email "you@your-domain.com"
 ---
 
 ## [D2Coding](https://github.com/naver/d2codingfont/releases) [Font]  
+
+- 맥이나 우분투 GUI 모드에서는 [링크](https://github.com/naver/d2codingfont/releases)에서 압축파일을 받아 압축을 푼 후, ttc 파일을 사용해 쉽게 설치할 수 있습니다.  
+- 우분투 CLI나 라즈베리 파이를 사용중이라면 아래 방법을 사용합니다.  
+
+{:.lang-en}
 
 - On Mac or Ubuntu GUI mode, unzip and doublick the ttc file in D2CodingAll directory. You can install the font easily.  
 - If you are using Ubuntu CLI or RPi, try this.  
@@ -91,7 +99,8 @@ $ brew install --cask iterm2
 
 ## [zsh & Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)  
 
-- zsh is default shell on recent mac. Others need installation.  
+- zsh은 최근 맥에서는 기본 쉘로 설정되어 있습니다.  
+- {:.lang-en}zsh is default shell on recent mac. Others need installation.  
 
 ```bash
 # Mac. For update zsh.
@@ -102,7 +111,7 @@ $ sudo apt install zsh
 $ sudo chsh -s `which zsh`
 ```
 
-- Oh My Zsh  
+#### Oh My Zsh  
 
 ```zsh
 # oh-my-zsh
@@ -116,7 +125,8 @@ $ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-
 $ vi ~/.zshrc
 ```
 
-- Add plugins.
+- 플러그인에 추가해줍니다.  
+- {:.lang-en}Add plugins.  
 
 ```plaintext
 plugins=(
@@ -127,7 +137,8 @@ plugins=(
 )
 ```
 
-- Apply the changes.
+- 변경사항을 적용합니다.  
+- {:.lang-en}Apply the changes.  
 
 ```bash
 $ source ~/.zshrc
@@ -137,27 +148,27 @@ $ source ~/.zshrc
 
 ## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
 
-- Install [fonts](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) for fancy icons. [Optional]  
+- 터미널에 다양한 아이콘이 보이도록 하려면 전용 [폰트](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)를 설치해줍니다.  
+- {:.lang-en}Install [fonts](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) for fancy icons. [Optional]  
 
 ![p10k]({{"assets/img/programming/201218_OS/2020-12-18-OS_init_p10k.png" | relative_url}}){:class="imgframe"}  
 
-- Install powerlevel10k.
+- powerlevel10k를 설치합니다.  
+- {:.lang-en}Install powerlevel10k.  
 
 ```zsh
 $ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+```
+
+- 테마를 수정하고 적용합니다.
+- {:.lang-en}Change and apply the theme.
+
+```zsh
 $ vi ~/.zshrc
-```
 
-- Change theme.
+> ZSH_THEME="powerlevel10k/powerlevel10k"
 
-```zsh
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-- Apply the changes.
-
-```zsh
 $ source ~/.zshrc
 ```
 
@@ -173,7 +184,8 @@ $ brew install tmux
 $ sudo apt install tmux
 ```
 
-- Apply tmux theme.
+- tmux 테마를 적용합니다.  
+- {:.lang-en}Apply tmux theme. [Optional]  
 
 ```zsh
 $ cd ~/
@@ -182,7 +194,8 @@ $ ln -s -f .tmux/.tmux.conf
 $ cp .tmux/.tmux.conf.local .
 ```
 
-- Set tmux to allow mouse. Modify `.tmux/.tmux.conf.local`
+- 마우스 동작을 허용합니다.  
+- {:.lang-en}Set tmux to allow mouse. Modify `.tmux/.tmux.conf.local`  
 
 ```zsh
 $ vi ~/.tmux/.tmux.conf.local
@@ -194,14 +207,16 @@ $ vi ~/.tmux/.tmux.conf.local
 
 ## Docker & Docker Compose
 
-- On Mac, install [Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/) or try this.  
+- 맥에서는 [Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/) 이 방법으로 설치해도 되고, 아래처럼 brew를 사용해도 됩니다.  
+- {:.lang-en}On Mac, install [Docker Desktop on Mac](https://docs.docker.com/docker-for-mac/install/) or try this.  
   
     ```bash
     $ brew install --cask docker  
     ```
   
-- On Ubuntu and RPi, you have to install each.  
-  - Install [Docker](https://docs.docker.com/engine/install/ubuntu/) on Ubuntu.
+- 우분투와 라즈베리 파이에서는 도커와 컴포즈를 따로 설치해줘야 합니다.  
+- {:.lang-en}On Ubuntu and RPi, you have to install each.  
+  - {:.lang-en}Install [Docker](https://docs.docker.com/engine/install/ubuntu/) on Ubuntu.  
 
     ```bash
     $ sudo apt-get remove docker docker-engine docker.io containerd runc
@@ -225,21 +240,22 @@ $ vi ~/.tmux/.tmux.conf.local
     $ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ```
 
-  - Install [Docker Compose](https://docs.docker.com/compose/install/) on Ubuntu.
+  - {:.lang-en}Install [Docker Compose](https://docs.docker.com/compose/install/) on Ubuntu.
+    - Docker-compose 버전은 계속 업데이트 되므로 원하는 버전으로 바꾸거나, 링크의 공식 문서를 참고하세요.  
 
     ```bash
-    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.28.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     $ sudo chmod +x /usr/local/bin/docker-compose
     ```
 
-  - Install [Docker](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script) on RPi.
+  - {:.lang-en}Install [Docker](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script) on RPi.
 
     ```bash
     $ curl -fsSL https://get.docker.com -o get-docker.sh
     $ sudo sh get-docker.sh
     ```
 
-  - Install [Docker Compose](https://docs.docker.com/compose/install/#alternative-install-options) on RPi.
+  - {:.lang-en}Install [Docker Compose](https://docs.docker.com/compose/install/#alternative-install-options) on RPi.
 
     ```bash
     $ sudo pip install docker-compose
