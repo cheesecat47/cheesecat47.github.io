@@ -3,6 +3,7 @@ layout: post
 title:  "Infrared City, 181101"
 date:   2018-11-01 00:00:00 +0900
 categories: Photography
+tags: [infrared, InfraredCity]
 image: thumbnails/2019-1-4-infrared-city-181101_1.jpg
 ---
 

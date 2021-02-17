@@ -1,0 +1,18 @@
+main:
+  - title: About
+    url: /about/
+  - title: Photography
+    sublinks:
+      - title: All articles
+        url: /photography/
+      - title: InfraredCity
+        url: /photography/infraredcity/
+
+  - title: Programming
+    sublinks:
+      - title: All articles
+        url: /programming/
+      - title: Algorithm
+        url: /programming/algorithm/
+      - title: OS
+        url: /programming/os/

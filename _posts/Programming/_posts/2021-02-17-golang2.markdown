@@ -1,0 +1,61 @@
+---
+layout: post
+title: "Go #2 go mod"
+date: 2021-02-17 17:45:00 +0900
+categories: Programming
+tags: [Go, Mac]
+image: programming/210217_golang/2021-02-17-golang6.png
+---
+
+> Go는 1.13 버전부터 패키지 의존성 관리를 위해 .mod 파일을 사용합니다.
+
+Go는 $GOPATH/src 폴더가 아닌 외부 경로에서 작업할 때 .mod 파일이 있으면 모듈을 사용합니다. 기본으로 설정되는 GOPATH는 `/usr/local/go` 같이 사용자가 쉽게 접근하기 힘든 폴더입니다.  
+그래서 편하게 사용하기 위해 바탕화면 등 접근이 쉬운 곳에 디렉토리를 만들고 go mod를 사용하는 방법을 사용하는 것이 좋습니다.  
+(Go 공식 문서에도 제일 처음 hello world 예제에 go mod init 하는 방법이 나옵니다.)
+
+<br/>
+
+1. 우선 원하는 경로로 이동하고 디렉토리를 생성합니다. 저는 `~/Developer/helloGo` - 홈 디렉토리 아래 `Developer` 디렉토리에 `helloGo`라는 이름으로 만들었습니다.
+
+    {:.lang-en}
+
+    At first, change directory where you want and make a new directory.
+
+    ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang7.png" | relative_url}})
+
+1. `go mod init [module name]` 명령어를 실행합니다. (모듈 이름은 디렉토리 이름과 달라도 됩니다.)  
+    `go.mod`라는 파일이 생성되고, 모듈 이름과 현재 Go 버전이 저장됩니다.
+
+    {:.lang-en}
+
+    Run `go mod init [module name]`. It generates `go.mod` file.
+
+    ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang8.png" | relative_url}})
+
+1. 파일을 작성하고 실행해봅니다.
+
+    {:.lang-en}
+
+    Write a file and run it.
+
+    ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang9.png" | relative_url}})
+
+1. 모듈이 잘 동작하는지도 확인해봅니다. `rsc.io/quote`라는 모듈을 불러와 사용합니다.
+    `go mod tidy` 명령어를 실행하면 변경된 모듈을 찾아 `go.mod` 파일을 수정합니다.
+
+    {:.lang-en}
+
+    This time, import `rsc.io/quote` module and use it. `go mod tidy` command will trace changed modules and modify `go.mod` file.  
+
+    ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang10.png" | relative_url}})
+
+    `go.mod` 파일을 확인해보면 `require` 부분에 `quote` 모듈이 추가되었습니다.  
+
+    {:.lang-en}
+
+    `quote` module has added to `require` in the `go.mod` file.  
+
+## References
+
+- <https://golang.org/doc/tutorial/getting-started>
+- <https://blog.golang.org/using-go-modules>

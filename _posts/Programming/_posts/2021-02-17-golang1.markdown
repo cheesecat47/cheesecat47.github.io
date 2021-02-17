@@ -1,0 +1,51 @@
+---
+layout: post
+title: "Go #1 설치하기"
+date: 2021-02-17 16:00:00 +0900
+categories: Programming
+tags: [Go, Mac]
+image: programming/210217_golang/2021-02-17-golang.png
+---
+
+> [공식 문서](https://golang.org/doc/install)를 따라 하면 설치 과정에 큰 어려움은 없습니다.  
+> macOS Catalina 10.15.7에서 실행했습니다.  
+> 21년 2월 17일 현재 최신 버전은 1.16입니다.
+
+<br/>
+
+1. 우선 설치 파일을 다운로드합니다.
+
+   {:.lang-en}
+
+   At first, download the installation file.
+
+   ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang1.png" | relative_url}})  
+
+1. 설치파일을 실행합니다.
+
+   {:.lang-en}
+
+   Run the installation file.
+
+   ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang2.png" | relative_url}})  
+   이전 버전 Go가 설치되어 있다면 이런 화면이 뜹니다.
+
+   {:.lang-en}
+
+   This message is shown when the previous version of Go is already installed.
+
+   ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang3.png" | relative_url}})  
+   ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang4.png" | relative_url}})  
+   특별한 설정 없이 `continue`하고 기다리면 설치가 완료됩니다.
+
+   {:.lang-en}
+
+   Keep `continue` and the install process will be done in few minutes.
+
+1. Go가 잘 설치되었는지 확인해봅니다.
+   ![GoDownload]({{"assets/img/programming/210217_golang/2021-02-17-golang5.png" | relative_url}})  
+
+## References
+
+- <https://golang.org/doc/install>
+- <https://golang.org/dl/>
