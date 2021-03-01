@@ -7,11 +7,10 @@ tags: [Go, Mac]
 image: programming/210217_golang/2021-02-17-golang6.png
 ---
 
-> Go는 1.13 버전부터 패키지 의존성 관리를 위해 .mod 파일을 사용합니다.
+> Go는 1.13 버전부터 패키지 의존성 관리를 위해 `go.mod` 파일을 사용합니다.
 
-Go는 $GOPATH/src 폴더가 아닌 외부 경로에서 작업할 때 .mod 파일이 있으면 모듈을 사용합니다. 기본으로 설정되는 GOPATH는 `/usr/local/go` 같이 사용자가 쉽게 접근하기 힘든 폴더입니다.  
-그래서 편하게 사용하기 위해 바탕화면 등 접근이 쉬운 곳에 디렉토리를 만들고 go mod를 사용하는 방법을 사용하는 것이 좋습니다.  
-(Go 공식 문서에도 제일 처음 hello world 예제에 go mod init 하는 방법이 나옵니다.)
+Go는 `$GOPATH/src` 폴더가 아닌 외부 경로에서 작업할 때 `go.mod` 파일이 있으면 모듈을 사용합니다.(`$GOPATH/src` 폴더 안이면 `go.mod` 파일이 있더라도 `GOPATH`를 그대로 사용합니다.)  
+Go 공식 문서에도 제일 처음 hello world 예제에 `go mod init`을 하는 방법이 나옵니다. 공식문서를 따라 모듈을 사용해봅니다.  
 
 <br/>
 
@@ -59,3 +58,6 @@ Go는 $GOPATH/src 폴더가 아닌 외부 경로에서 작업할 때 .mod 파일
 
 - <https://golang.org/doc/tutorial/getting-started>
 - <https://blog.golang.org/using-go-modules>
+- <https://golang.org/doc/go1.11#modules>
+- <https://golang.org/cmd/go/#hdr-Modules__module_versions__and_more>
+- <https://golang.org/ref/mod>
