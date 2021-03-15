@@ -16,23 +16,34 @@ I'm Korean student majoring Computer Science & Engineering in Kyungpook National
   - APACHE httpd, Tomcat, Docker.  
   - Mar. 2020 - Jun. 2020.  
 
-<br>
+&nbsp;
 
 - PnF Equipments Rent Web  
   - Django, Docker, RPi.  
   - Dec. 2019 - Present.  
 
-<br>  
+&nbsp;
 
 - [SSLab] Manage and develop web-based analysis platform for malware network traffic captures.
   - Django, Elasticstack, Kafka, Docker.
   - May. 2019 - Dec. 2019.  
 
-<br>  
+&nbsp;
 
 - [4x5 format pinhole camera](https://cheesecat47.github.io/photography/4x5pinhole1.html){:target="blank"}.  
   - Arduino.
   - Mar. 2019 - Aug. 2019.  
+
+---
+
+### **Education**  
+
+- M.Sc., [Computer Science & Engineering][KNUCSE]{:target="blank"}  
+  - [Software Systems Lab](http://sslab.knu.ac.kr/index.html){:target="blank"}, Kyungpook National University.  
+  - May. 2021 - Present.  
+- B.Sc., Computer Science & Engineering  
+  - Kyungpook National University.  
+  - May. 2014 - Feb. 2021.  
 
 ---
 
@@ -52,30 +63,19 @@ Kyungpook National University.
 
 ---
 
-### **Education**  
-
-<!-- - M.Sc., [Computer Science & Engineering][KNUCSE]{:target="blank"}  
-  - Kyungpook National University.  
-  - May. 2021 - Present.   -->
-- B.Sc., [Computer Science & Engineering][KNUCSE]{:target="blank"}  
-  - Kyungpook National University.  
-  - May. 2014 - Feb. 2021.  
-
----
-
 #### **Exhibitions**  
 
 - [Kyungpook National University Museum 60th Anniversary Photo Exhibition](../photography/Wolpawon.html)  
   - KNU Museum.  
   - Nov. 11, 2019 ~ Feb. 25, 2020.  
 
-<br>  
+&nbsp;
 
 - [Kyungpook National University Photography Club 50th anniversary Exhibition](../photography/Moonrise2020.html)  
   - Daegu Arts Centre.  
   - Jan. 2019.  
 
-<br>  
+&nbsp;
 
 - Daegu Gyeongbuk University Photography Club Exhibition.
   - 49th, Feb. 2020. 9block 2garden, Daegu.  
