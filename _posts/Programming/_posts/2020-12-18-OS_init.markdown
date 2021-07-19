@@ -3,7 +3,7 @@ layout: post
 title: "Mac, Ubuntu initial settings"
 date: 2020-12-18 16:00:00 +0900
 categories: Programming
-tags: [Mac, Ubuntu, Setting]
+tags: [Mac, Ubuntu, OS, Setting]
 # image: thumbnails/
 ---
 

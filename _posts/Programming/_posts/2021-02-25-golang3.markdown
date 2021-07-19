@@ -1,0 +1,91 @@
+---
+layout: post
+title: "Go #3 웹 애플리케이션 만들기"
+date: 2021-02-25 20:00:00 +0900
+categories: Programming
+tags: [Go, Web]
+image: programming/210225_golang/2021-02-25-golang3-7.png
+---
+
+> [공식 문서](https://golang.org/doc/articles/wiki/)를 따라 Go로 웹 애플리케이션을 만들어 봅시다.  
+
+&nbsp;
+
+1. 새 디렉토리를 만들고 모듈을 설정합니다.  
+
+    {:.lang-en}
+
+    First, make a new directory and init module.  
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-1.png" | relative_url}})
+
+1. 필요한 패키지를 import하고, `Page` 자료구조를 만듭니다. `Page`는 `Title`과 `Body`로 구성됩니다. `Body`는 `string`이 아닌 `[]byte`, 바이트 슬라이스 타입으로 선언했는데, `io`라이브러리가 `[]byte` 타입을 사용할 것이기 때문입니다.  
+
+    {:.lang-en}
+
+    Import packages we needed and define a struct `Page`. It is constructed with `Title` and `Body` fields. The `Body` is defined `[]byte`, a byte slice type, not a `string` because the `io` libraries will use the type.  
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-2.png" | relative_url}})
+
+1. 위에서 선언한 `Page`는 데이터가 메모리에 어떻게 저장될지를 나타냅니다. 이를 파일로 만들어 스토리지에 저장하기 위해 `save()` 메소드를 만듭니다.  
+    `save` 메소드는 Page의 포인터 `(p *Page)`를 `p`라는 이름으로 받고, 파라미터는 없고, `error`를 반환합니다.  
+    `WriteFile`은 파일 이름, 파일에 쓸 내용, permission을 인자로 받고, 처리 과정에 에러가 발생하면 `error`를, 문제가 없다면 `nil`을 반환합니다.  
+
+    {:.lang-en}
+
+    The `Page` structure is represent how the data is stored in memory. Let's make a `save()` method to store in storage.  
+    `save` method takes `*Page` as p, no parameters, and returns an `error` type.  
+    `WriteFile` takes a file name, data to write, and permission. If all goes well, it will return `nil`, otherwise, return an `error`.  
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-3.png" | relative_url}})
+
+1. 페이지를 스토리지에 저장했으니 불러오는 함수도 만들어 봅니다. `loadPage`는 페이지 제목을 파라미터로 받아서 `ReadFile`을 실행합니다.  
+    `ReadFile`은 값 2개를 반환합니다. 첫 번째는 `[]byte`타입의 값이고, 두 번째는 `error`입니다. 파일을 정상적으로 불러온다면 첫 번째로 파일 내용이 반환되고, 두 번째는 `nil`일 것입니다.  
+    하지만, 에러가 발생한다면 두 번째 반환값이 `nil`이 아닐 것입니다. 이 경우 if문을 사용해 핸들링 합니다. (Go는 `try-catch`문이 없고, `if err != nil`을 사용<sup>[2]</sup>합니다.)  
+
+    {:.lang-en}
+
+    `loadPage` is a function that opens the file from the storage. It takes a title from the parameter and run `ReadFile`.  
+    `ReadFile` returns two values - `[]byte` and `error`. If it goes well, the first value will be data from the file and the second is `nil`.  
+    Otherwise, the second won't be `nil`. In this case, you have to handle with if statement.  
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-4.png" | relative_url}})
+
+1. `main`함수를 만들고 테스트 해봅시다. 전체 코드는 다음과 같습니다.  
+
+    {:.lang-en}
+
+    Make `main` function and run it.
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-5.png" | relative_url}})  
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-6.png" | relative_url}})  
+
+1. 지금까지 한 건 웹사이트가 아닙니다. 이제부터 Go로 웹서버를 만들 수 있는 `net/http` 패키지를 다뤄봅시다.  
+    `main` 함수는 `http.HandleFunc`을 호출해 `/view/`라는 url을 `viewHandler`가 처리하도록 합니다.  
+    그 다음 `http.ListenAndServe`를 호출해 서버를 실행합니다. 이 때, 포트 번호를 지정할 수 있습니다.  
+    `r.URL.Path`는 요청 URL의 경로를 나타냅니다. `[len("/view/"):]`는 슬라이스를 만드는 코드입니다. `r.URL.Path`에서 `/view/` 다음부터 끝까지 해당하는 값을 `title` 변수로 사용한다는 뜻입니다.  
+
+    {:.lang-en}
+
+    Make `main` function and run it.  
+    `main` function calls to `http.HandleFunc`, which makes `viewHandler` to handle `/view/` url.  
+    And then, run server with `http.ListenAndServe`. You can specify the listening port.  
+    `r.URL.Path` describe the path of request URL. `[len("/view/"):]` is for making a slice. It means that you will use a value from the end of the `/view/` to end of the path in `r.URL.Path` as the `title`.  
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-7.png" | relative_url}})  
+
+1. 서버를 실행해봅시다. `go run wiki.go`를 실행하고 <http://localhost:8080/view/TestPage>로 접속합니다. 그러면 아까 생성했던 `TestPage.txt`가 웹 브라우저에 보일 것입니다.  
+
+    {:.lang-en}
+
+    Let's run the server. Run `go run wiki.go` and go to <http://localhost:8080/view/TestPage>. You can see the `TestPage.txt` on your browser.   
+
+    ![GoWeb]({{"assets/img/programming/210225_golang/2021-02-25-golang3-8.png" | relative_url}}) 
+
+## References
+
+{:.references}
+
+[1] "Writing Web Applications". golang.org. <https://golang.org/doc/articles/wiki/> (accessed Feb. 26, 2021).  
+[2] Andrew Gerrand. "Error handling and Go". blog.golang.org. <https://blog.golang.org/error-handling-and-go> (accessed Feb. 26, 2021).  
+
